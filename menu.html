@@ -74,9 +74,9 @@
   <section style="padding:clamp(32px,3.6vw,56px) 5% clamp(40px,4.5vw,68px); border-bottom:1px solid rgba(57,29,1,0.28);">
     <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr)); gap:clamp(16px,2vw,24px);">
       <sc-for list="{{ layers }}" as="ly" hint-placeholder-count="3">
-        <article data-reveal style="background:{{ ly.bg }}; color:{{ ly.ink }}; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:clamp(20px,2vw,28px); display:flex; flex-direction:column; gap:12px; transition:transform .3s ease;" style-hover="transform:translateY(-5px) rotate(-0.6deg);">
+        <article data-reveal style="background:{{ ly.bg }}; color:{{ ly.ink }}; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:clamp(20px,2vw,28px); display:flex; flex-direction:column; gap:12px; box-shadow:{{ ly.glow }}; transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:translateY(-5px) rotate(-0.6deg);">
           <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-            <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; color:{{ ly.ink }};">{{ ly.num }} · {{ ly.layer }}</span>
+            <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; color:{{ ly.accent }};">{{ ly.num }} · {{ ly.layer }}</span>
             <span style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; border:1px solid {{ ly.ink }}; border-radius:999px; white-space:nowrap; padding:6px 10px; color:{{ ly.ink }}; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;">{{ ly.duration }}</span>
           </div>
           <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(18.9px,1.72vw,23.2px); line-height:1.08; letter-spacing:-0.015em; margin:0; color:{{ ly.ink }};">{{ ly.name }}</h2>
@@ -217,19 +217,19 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const LAYERS = [
-  { num: '01', layer: 'Cone', name: 'Identidade Visual', line: 'Onde a tua marca ganha forma.', bg: '#ACC048', ink: '#391D01', stickerBg: '#F3E9D2', duration: '4 semanas', price: '200★', priceNote: 'projeto',
+  { num: '01', layer: 'Cone', name: 'Identidade Visual', line: 'Onde a tua marca ganha forma.', bg: '#391D01', ink: '#F3E9D2', accent: '#ACC048', glow: '0 0 46px 12px rgba(172,192,72,0.5)', stickerBg: '#F3E9D2', duration: '4 semanas', price: '200★', priceNote: 'projeto',
     desc: 'Logótipo, paleta, tipografia e padrões que dão rosto à tua marca — com alma, não com moldes.',
     expect: 'Tu trazes a tua visão e o teu negócio; nós desenhamos logótipo, paleta, tipografia e padrões prontos a usar.',
     chips: ['Logótipo', 'Variações', 'Paleta de cores', 'Tipografia', 'Padrões', 'Brand guidelines', 'Moodboard', 'Direção criativa'],
     delivers: ['2 sessões de acompanhamento', 'Documento entregável para análise', 'Documentos para utilização', 'Dúvidas à distância de um clique'],
     sticker: 'Uma marca reconhecida ao longe não precisa de se apresentar.' },
-  { num: '02', layer: 'Sabor', name: 'Estratégia de Marca', line: 'A base de tudo.', bg: '#D2E8FF', ink: '#391D01', stickerBg: '#F3E9D2', duration: '6 semanas', price: '350★', priceNote: 'projeto',
+  { num: '02', layer: 'Sabor', name: 'Estratégia de Marca', line: 'A base de tudo.', bg: '#391D01', ink: '#F3E9D2', accent: '#D2E8FF', glow: '0 0 46px 12px rgba(210,232,255,0.5)', stickerBg: '#F3E9D2', duration: '6 semanas', price: '350★', priceNote: 'projeto',
     desc: 'Posicionamento, persona e narrativa — o sabor que só a tua marca tem.',
     expect: 'Tu respondes a perguntas honestas sobre o teu negócio; nós transformamos as respostas num posicionamento e plano de ação claros.',
     chips: ['Diagnóstico', 'Posicionamento', 'Plano Estratégico', 'Proposta de valor', 'Persona', 'Análise competitiva', 'Tom de voz', 'Narrativa', 'Roadmap'],
     delivers: ['3 sessões de acompanhamento', 'Documento entregável para análise', 'Dúvidas à distância de um clique'],
     sticker: 'Sem base, o gelado cai. Sem estratégia, a marca também.' },
-  { num: '03', layer: 'Topping', name: 'Redes Sociais & Conteúdo', line: 'O extra que faz toda a diferença.', bg: '#690A20', ink: '#F3E9D2', stickerBg: '#F3E9D2', duration: '4 semanas', price: '250★', priceNote: 'por mês',
+  { num: '03', layer: 'Topping', name: 'Redes Sociais & Conteúdo', line: 'O extra que faz toda a diferença.', bg: '#391D01', ink: '#F3E9D2', accent: '#FBF59C', glow: '0 0 46px 12px rgba(251,245,156,0.5)', stickerBg: '#F3E9D2', duration: '4 semanas', price: '250★', priceNote: 'por mês',
     desc: 'Conteúdo, tom de voz e calendário editorial para apareceres onde importa.',
     expect: 'Tu defines a tua rotina e disponibilidade; nós construímos o tom de voz e o calendário editorial à tua medida.',
     chips: ['Diagnóstico e posicionamento', 'Estratégia de conteúdo', 'Direção criativa', 'Tom de voz', 'Calendário editorial', 'Análise de concorrência', 'Plano de crescimento'],

@@ -130,8 +130,8 @@
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:22px;">
       <sc-for list="{{ services }}" as="svc" hint-placeholder-count="3">
-        <article data-reveal style="background:{{ svc.bg }}; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:clamp(26px,2.6vw,36px); display:flex; flex-direction:column; gap:16px; transition:transform .35s ease;" style-hover="transform:translateY(-6px) rotate(-0.5deg);">
-          <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; color:{{ svc.ink }};">{{ svc.num }} · {{ svc.layer }}</span>
+        <article data-reveal style="background:{{ svc.bg }}; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:clamp(26px,2.6vw,36px); display:flex; flex-direction:column; gap:16px; box-shadow:{{ svc.glow }}; transition:transform .35s ease, box-shadow .35s ease;" style-hover="transform:translateY(-6px) rotate(-0.5deg);">
+          <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; color:{{ svc.accent }};">{{ svc.num }} · {{ svc.layer }}</span>
           <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(19.5px,1.95vw,26.5px); line-height:1.02; letter-spacing:-0.02em; margin:0; color:{{ svc.ink }};">{{ svc.title }}</h3>
           <p style="font-size:14px; line-height:1.6; margin:0; color:{{ svc.ink }};">{{ svc.desc }}</p>
           <a href="./menu.html" style="margin-top:auto; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:{{ svc.ink }}; text-decoration:none; border-bottom:1px solid {{ svc.ink }}; align-self:flex-start; padding-bottom:3px;">Ver esta camada →</a>
@@ -218,13 +218,13 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamento&quot;},&quot;marqueePhrases&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
 const SERVICES = [
-  { num: '01', layer: 'Cone', bg: '#ACC048', ink: '#391D01',
+  { num: '01', layer: 'Cone', bg: '#391D01', ink: '#F3E9D2', accent: '#ACC048', glow: '0 0 46px 12px rgba(172,192,72,0.5)',
     title: 'A tua marca é reconhecida ao longe?',
     desc: 'Logótipo, paleta, tipografia e padrões que dão rosto à tua marca — com alma, não com moldes.' },
-  { num: '02', layer: 'Sabor', bg: '#D2E8FF', ink: '#391D01',
+  { num: '02', layer: 'Sabor', bg: '#391D01', ink: '#F3E9D2', accent: '#D2E8FF', glow: '0 0 46px 12px rgba(210,232,255,0.5)',
     title: 'Qual a estratégia da tua marca?',
     desc: 'Posicionamento, persona e narrativa — o sabor que só a tua marca tem.' },
-  { num: '03', layer: 'Topping', bg: '#690A20', ink: '#F3E9D2',
+  { num: '03', layer: 'Topping', bg: '#391D01', ink: '#F3E9D2', accent: '#FBF59C', glow: '0 0 46px 12px rgba(251,245,156,0.5)',
     title: 'Como se apresenta a tua marca nas redes sociais?',
     desc: 'Conteúdo, tom de voz e calendário editorial para apareceres onde importa.' },
 ];

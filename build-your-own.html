@@ -203,9 +203,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
 const GROUPS = [
-  { num: '01', layer: 'Cone', title: 'Identidade Visual', hint: 'A identidade visual — a forma que a marca vai ter.', bg: '#ACC048', ink: '#391D01', accent: '#690A20', key: 'cone' },
-  { num: '02', layer: 'Sabor', title: 'Estratégia de Marca', hint: 'A estratégia — o que sustenta todas as decisões.', bg: '#D2E8FF', ink: '#391D01', accent: '#690A20', key: 'base' },
-  { num: '03', layer: 'Topping', title: 'Redes Sociais & Conteúdo', hint: 'É aqui que se nota.', bg: '#690A20', ink: '#F3E9D2', accent: '#F3E9D2', key: 'toppings' },
+  { num: '01', layer: 'Cone', title: 'Identidade Visual', hint: 'A identidade visual — a forma que a marca vai ter.', bg: '#391D01', ink: '#F3E9D2', accent: '#ACC048', glowRgb: '172,192,72', key: 'cone' },
+  { num: '02', layer: 'Sabor', title: 'Estratégia de Marca', hint: 'A estratégia — o que sustenta todas as decisões.', bg: '#391D01', ink: '#F3E9D2', accent: '#D2E8FF', glowRgb: '210,232,255', key: 'base' },
+  { num: '03', layer: 'Topping', title: 'Redes Sociais & Conteúdo', hint: 'É aqui que se nota.', bg: '#391D01', ink: '#F3E9D2', accent: '#FBF59C', glowRgb: '251,245,156', key: 'toppings' },
 ];
 
 const PEDIDO_ENDPOINT = 'https://api.web3forms.com/submit';
@@ -327,8 +327,8 @@ class Component extends DCLogic {
         return {
           ...g,
           mark: on ? 'Escolhido ✓' : 'Escolher',
-          border: on ? '#391D01' : 'rgba(57,29,1,0.28)',
-          shadow: on ? '0 0 22px 3px rgba(172,192,72,0.9)' : '0 0 14px 2px rgba(105,10,32,0.35)',
+          border: on ? g.accent : 'rgba(57,29,1,0.28)',
+          shadow: on ? '0 0 34px 8px rgba(' + g.glowRgb + ',0.85)' : '0 0 42px 12px rgba(' + g.glowRgb + ',0.45)',
           pick: () => this.pick(g.key, g.layer),
         };
       }),
