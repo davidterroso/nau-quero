@@ -26,6 +26,7 @@
   a:hover { color:#391D01; }
   @keyframes nqPop { 0% { transform:scale(0.4); opacity:0; } 60% { transform:scale(1.12); opacity:1; } 100% { transform:scale(1); opacity:1; } }
   @keyframes nqFloat { 0%,100% { transform:translateY(0) rotate(-3deg); } 50% { transform:translateY(-10px) rotate(-1.5deg); } }
+  @keyframes nqMarquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 
   @media (max-width: 860px) {
     .nq-menu-btn { display:inline-flex !important; }
@@ -71,6 +72,27 @@
     </div>
   </section>
 
+  <div style="position:relative; z-index:3;">
+  <div style="background:#391D01; padding:6px 0; overflow:hidden; white-space:nowrap;">
+    <div style="display:inline-block; animation:nqMarquee 30s linear infinite;">
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">We don’t do vanilla. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">Your brand. Your recipe. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">The flavour is in the details. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">It’s okay to like extraordinary. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">We don’t do vanilla. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">Your brand. Your recipe. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">The flavour is in the details. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">It’s okay to like extraordinary. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+    </div>
+  </div>
+  <svg viewBox="0 0 1200 42" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:0; top:calc(100% - 1px); width:100%; height:clamp(14px,1.6vw,22px); display:block; pointer-events:none;">
+    <path d="M0 0 H1200 V18 C1175 18 1165 40 1140 40 C1110 40 1100 18 1080 18 C1055 18 1045 40 1020 40 C990 40 980 18 960 18 C935 18 925 40 900 40 C870 40 860 18 840 18 C815 18 805 40 780 40 C750 40 740 18 720 18 C695 18 685 40 660 40 C630 40 620 18 600 18 C575 18 565 40 540 40 C510 40 500 18 480 18 C455 18 445 40 420 40 C390 40 380 18 360 18 C335 18 325 40 300 40 C270 40 260 18 240 18 C215 18 205 40 180 40 C150 40 140 18 120 18 C95 18 85 40 60 40 C30 40 20 18 0 18 Z" fill="#391D01"></path>
+  </svg>
+  <svg viewBox="0 0 1200 42" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:0; bottom:calc(100% - 1px); width:100%; height:clamp(14px,1.6vw,22px); display:block; pointer-events:none; transform:scaleY(-1);">
+    <path d="M0 0 H1200 V18 C1175 18 1165 40 1140 40 C1110 40 1100 18 1080 18 C1055 18 1045 40 1020 40 C990 40 980 18 960 18 C935 18 925 40 900 40 C870 40 860 18 840 18 C815 18 805 40 780 40 C750 40 740 18 720 18 C695 18 685 40 660 40 C630 40 620 18 600 18 C575 18 565 40 540 40 C510 40 500 18 480 18 C455 18 445 40 420 40 C390 40 380 18 360 18 C335 18 325 40 300 40 C270 40 260 18 240 18 C215 18 205 40 180 40 C150 40 140 18 120 18 C95 18 85 40 60 40 C30 40 20 18 0 18 Z" fill="#391D01"></path>
+  </svg>
+  </div>
+
   <section id="pedido" style="padding:clamp(44px,5vw,84px) 5%; background:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28);">
     <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr)); gap:clamp(18px,2.4vw,32px); align-items:stretch;">
       <div style="grid-column:1 / -1; display:flex; flex-direction:column; gap:clamp(14px,1.6vw,22px); min-width:0;">
@@ -96,7 +118,7 @@
       </button>
       </div>
 
-      <form id="pedido-form" ref="{{ formRef }}" onSubmit="{{ submit }}" style="order:2; border:1px solid rgba(57,29,1,0.28); border-radius:16px; background:#F3E9D2; padding:clamp(22px,2.4vw,34px); display:flex; flex-direction:column; gap:20px; min-width:0;">
+      <form id="pedido-form" ref="{{ formRef }}" onSubmit="{{ onFormSubmit }}" style="order:2; border:1px solid rgba(57,29,1,0.28); border-radius:16px; background:#F3E9D2; padding:clamp(22px,2.4vw,34px); display:flex; flex-direction:column; gap:20px; min-width:0;">
         <div>
           <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0 0 8px;">2º passo · O pedido</p>
           <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
@@ -147,12 +169,24 @@
 
       <div style="order:4; grid-column:1 / -1; display:flex; flex-direction:column; gap:12px;">
         <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0; text-align:center; display:{{ stepLabelDisplay }};">3º passo · Envia o pedido</p>
+
+        <div style="display:{{ summaryDisplay }}; flex-direction:column; gap:14px; border:1px solid #391D01; border-radius:16px; background:#F3E9D2; color:#391D01; padding:22px 24px;">
+          <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(19px,2vw,24px); margin:0;">O teu resumo</h3>
+          <p style="font-family:'League Spartan',sans-serif; font-size:13.5px; line-height:1.7; margin:0; white-space:pre-line;">{{ summaryText }}</p>
+          <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; margin:0; color:#690A20;">Agora, é só clicares no "Enviar e-mail".</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button type="button" onClick="{{ sendEmail }}" style="flex:1 1 auto; box-sizing:border-box; background:#690A20; color:#F3E9D2; font-family:'League Spartan',sans-serif; font-size:14px; letter-spacing:0.015em; padding:16px 22px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.4deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">Enviar e-mail →</button>
+            <button type="button" onClick="{{ editSummary }}" style="background:transparent; color:#391D01; font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; padding:16px 18px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer;">← Corrigir dados</button>
+          </div>
+        </div>
+
         <div style="display:{{ successDisplay }}; align-items:center; gap:14px; border:1px solid #391D01; border-radius:16px; background:#ACC048; color:#391D01; padding:18px 22px; text-align:center; flex-direction:column;">
           <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(19px,2vw,24px); margin:0;">O seu pedido foi registado! ✓</h3>
           <p style="font-family:'League Spartan',sans-serif; font-size:13.5px; line-height:1.6; margin:0;">Vais receber uma resposta em <strong>nauquero.mr@gmail.com</strong> dentro de 48 horas.</p>
         </div>
-        <button type="button" onClick="{{ triggerSubmit }}" disabled="{{ sending }}" style="display:{{ buttonDisplay }}; width:100%; box-sizing:border-box; background:#690A20; color:#F3E9D2; font-family:'League Spartan',sans-serif; font-size:14px; letter-spacing:0.015em; padding:18px 24px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer; opacity:{{ sendingOpacity }}; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.4deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">{{ submitLabel }}</button>
-        <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; line-height:1.7; margin:0; opacity:0.7; text-align:center;">{{ formNote }}</p>
+
+        <button type="button" onClick="{{ triggerSubmit }}" style="display:{{ buttonDisplay }}; width:100%; box-sizing:border-box; background:#690A20; color:#F3E9D2; font-family:'League Spartan',sans-serif; font-size:14px; letter-spacing:0.015em; padding:18px 24px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.4deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">Enviar pedido →</button>
+        <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; line-height:1.7; margin:0; opacity:0.7; text-align:center; display:{{ stepLabelDisplay }};">{{ formNote }}</p>
       </div>
     </div>
   </section>
@@ -208,11 +242,10 @@ const GROUPS = [
   { num: '03', layer: 'Topping', title: 'Redes Sociais & Conteúdo', hint: 'É aqui que se nota.', bg: '#391D01', ink: '#F3E9D2', accent: '#F5C232', glowRgb: '245,194,50', key: 'toppings' },
 ];
 
-const PEDIDO_ENDPOINT = 'https://api.web3forms.com/submit';
-const PEDIDO_ACCESS_KEY = 'c74b0157-3540-4564-8bff-f552c0451f4d';
+const PEDIDO_EMAIL = 'nauquero.mr@gmail.com';
 
 class Component extends DCLogic {
-  state = { cone: [], base: [], toppings: [], unsure: false, sent: false, sending: false, error: false };
+  state = { cone: [], base: [], toppings: [], unsure: false, step: 'form', summary: null };
 
   componentDidMount() {
     try {
@@ -245,27 +278,38 @@ class Component extends DCLogic {
     const form = this._form || document.getElementById('pedido-form');
     if (!form) return;
     if (form.reportValidity && !form.reportValidity()) return;
-    this.submit({ preventDefault: () => {}, target: form });
-  };
-  submit = (e) => {
-    e.preventDefault();
-    if (this.state.sending) return;
     this.save();
-    const form = e.target;
     const data = new FormData(form);
-    data.append('access_key', PEDIDO_ACCESS_KEY);
-    data.append('subject', 'Novo pedido — Nau Quero (' + this.recipeName() + ')');
-    data.append('receita', this.recipeName());
-    this.setState({ sending: true, error: false });
-    fetch(PEDIDO_ENDPOINT, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data })
-      .then(res => res.json().then(body => ({ ok: res.ok, body })))
-      .then(({ ok, body }) => {
-        if (!ok || !body.success) throw new Error(body && body.message || 'bad response');
-        this.setState({ sending: false, sent: true, error: false });
-        form.reset();
-      })
-      .catch((err) => { console.error('Nau Quero — falha ao enviar pedido:', err); this.setState({ sending: false, error: true }); });
+    const summary = {
+      nome: (data.get('nome') || '').toString().trim(),
+      email: (data.get('email') || '').toString().trim(),
+      marca: (data.get('marca') || '').toString().trim(),
+      website: (data.get('website') || '').toString().trim(),
+      mensagem: (data.get('mensagem') || '').toString().trim(),
+    };
+    this.setState({ step: 'summary', summary });
   };
+  editSummary = () => { this.setState({ step: 'form' }); };
+  onFormSubmit = (e) => { e.preventDefault(); this.triggerSubmit(); };
+  sendEmail = () => {
+    const s = this.state.summary;
+    if (!s) return;
+    const subject = 'Novo pedido — Nau Quero (' + this.recipeName() + ')';
+    const body = this.summaryText(s);
+    window.location.href = 'mailto:' + PEDIDO_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    this.setState({ step: 'sent' });
+  };
+  summaryText(s) {
+    const lines = [
+      'Nome: ' + s.nome,
+      'Email: ' + s.email,
+    ];
+    if (s.marca) lines.push('Marca: ' + s.marca);
+    if (s.website) lines.push('Website/Instagram: ' + s.website);
+    lines.push('Receita: ' + this.recipeName());
+    if (s.mensagem) lines.push('', 'Mensagem:', s.mensagem);
+    return lines.join('\n');
+  }
 
   recipeName() {
     if (this.state.unsure) return 'Ainda por escolher — vamos descobrir juntas';
@@ -348,17 +392,15 @@ class Component extends DCLogic {
       recipeLines: lines,
       formRef: this.formRef,
       triggerSubmit: this.triggerSubmit,
-      submitLabel: this.state.sending ? 'A enviar…' : 'Enviar pedido →',
-      sending: this.state.sending ? 'true' : '',
-      sendingOpacity: this.state.sending ? '0.6' : '1',
-      stepLabelDisplay: this.state.sent ? 'none' : 'block',
-      buttonDisplay: this.state.sent ? 'none' : 'block',
-      successDisplay: this.state.sent ? 'flex' : 'none',
-      formNote: this.state.sent
-        ? ''
-        : (this.state.error
-          ? 'Não foi possível enviar agora. Escreve-me diretamente para nauquero.mr@gmail.com, por favor.'
-          : 'Ao enviares, o pedido chega diretamente ao email da Nau Quero.'),
+      onFormSubmit: this.onFormSubmit,
+      sendEmail: this.sendEmail,
+      editSummary: this.editSummary,
+      summaryText: this.state.summary ? this.summaryText(this.state.summary) : '',
+      stepLabelDisplay: this.state.step === 'form' ? 'block' : 'none',
+      buttonDisplay: this.state.step === 'form' ? 'block' : 'none',
+      summaryDisplay: this.state.step === 'summary' ? 'flex' : 'none',
+      successDisplay: this.state.step === 'sent' ? 'flex' : 'none',
+      formNote: 'Ao enviares, confirmas o teu pedido antes de abrir o email para a Nau Quero.',
     };
   }
 }

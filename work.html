@@ -30,6 +30,7 @@
   a:hover { color:#391D01; }
   @keyframes nqFloat { 0%,100% { transform:translateY(0) rotate(-3deg); } 50% { transform:translateY(-10px) rotate(-1.5deg); } }
   @keyframes nqReveal { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes nqMarquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 
   @media (max-width: 860px) {
     .nq-menu-btn { display:inline-flex !important; }
@@ -72,6 +73,27 @@
       <p style="font-size:clamp(14px,1.55vw,17.2px); line-height:1.6; max-width:54ch; margin:0; flex:1 1 min(100%,300px);">Identidade, estratégia, presença digital e investigação científica. As imagens ficam identificadas como placeholders até chegarem as fotografias e mockups finais.</p>
     </div>
   </section>
+
+  <div style="position:relative; z-index:3;">
+  <div style="background:#391D01; padding:6px 0; overflow:hidden; white-space:nowrap;">
+    <div style="display:inline-block; animation:nqMarquee 30s linear infinite;">
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">We don’t do vanilla. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">Your brand. Your recipe. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">The flavour is in the details. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">It’s okay to like extraordinary. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">We don’t do vanilla. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">Your brand. Your recipe. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">The flavour is in the details. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+      <span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">It’s okay to like extraordinary. <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span>
+    </div>
+  </div>
+  <svg viewBox="0 0 1200 42" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:0; top:calc(100% - 1px); width:100%; height:clamp(14px,1.6vw,22px); display:block; pointer-events:none;">
+    <path d="M0 0 H1200 V18 C1175 18 1165 40 1140 40 C1110 40 1100 18 1080 18 C1055 18 1045 40 1020 40 C990 40 980 18 960 18 C935 18 925 40 900 40 C870 40 860 18 840 18 C815 18 805 40 780 40 C750 40 740 18 720 18 C695 18 685 40 660 40 C630 40 620 18 600 18 C575 18 565 40 540 40 C510 40 500 18 480 18 C455 18 445 40 420 40 C390 40 380 18 360 18 C335 18 325 40 300 40 C270 40 260 18 240 18 C215 18 205 40 180 40 C150 40 140 18 120 18 C95 18 85 40 60 40 C30 40 20 18 0 18 Z" fill="#391D01"></path>
+  </svg>
+  <svg viewBox="0 0 1200 42" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:0; bottom:calc(100% - 1px); width:100%; height:clamp(14px,1.6vw,22px); display:block; pointer-events:none; transform:scaleY(-1);">
+    <path d="M0 0 H1200 V18 C1175 18 1165 40 1140 40 C1110 40 1100 18 1080 18 C1055 18 1045 40 1020 40 C990 40 980 18 960 18 C935 18 925 40 900 40 C870 40 860 18 840 18 C815 18 805 40 780 40 C750 40 740 18 720 18 C695 18 685 40 660 40 C630 40 620 18 600 18 C575 18 565 40 540 40 C510 40 500 18 480 18 C455 18 445 40 420 40 C390 40 380 18 360 18 C335 18 325 40 300 40 C270 40 260 18 240 18 C215 18 205 40 180 40 C150 40 140 18 120 18 C95 18 85 40 60 40 C30 40 20 18 0 18 Z" fill="#391D01"></path>
+  </svg>
+  </div>
 
   <section style="padding:clamp(34px,4vw,58px) 5%; border-bottom:1px solid rgba(57,29,1,0.28);">
     <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0 0 clamp(18px,2vw,26px);">Escolhe uma camada</p>

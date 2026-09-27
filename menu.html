@@ -152,10 +152,10 @@
   </section>
 
   <div style="position:relative; z-index:3;">
-  <div style="background:#391D01; padding:12px 0; overflow:hidden; white-space:nowrap;">
-    <div style="display:inline-block; animation:nqMarquee 28s linear infinite;">
-      <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="4"><span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:18.3px; color:#F3E9D2; margin:0 18px;">{{ m }} <span style="color:#C69A62; font-style:normal;">·</span></span></sc-for>
-      <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="4"><span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:18.3px; color:#F3E9D2; margin:0 18px;">{{ m }} <span style="color:#C69A62; font-style:normal;">·</span></span></sc-for>
+  <div style="background:#391D01; padding:6px 0; overflow:hidden; white-space:nowrap;">
+    <div style="display:inline-block; animation:nqMarquee 30s linear infinite;">
+      <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="4"><span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">{{ m }} <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span></sc-for>
+      <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="4"><span style="font-family:'Petrona',Georgia,serif; font-style:italic; font-size:20px; color:#F3E9D2; margin:0 20px;">{{ m }} <span style="color:#ACC048; font-style:normal; margin-left:14px;">✦</span></span></sc-for>
     </div>
   </div>
   <svg viewBox="0 0 1200 42" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:0; top:calc(100% - 1px); width:100%; height:clamp(14px,1.6vw,22px); display:block; pointer-events:none;">
@@ -288,7 +288,7 @@ class Component extends DCLogic {
       layers: LAYERS,
       pillars: PILLARS,
       steps: STEPS.map((s, i) => ({ ...s, delay: String(i * 90) })),
-      marquee: ['YOUR BRAND. YOUR RECIPE.', 'MONTA O TEU GELADO', "WE DON'T DO VANILLA."],
+      marquee: ['We don\'t do vanilla.', 'Your brand. Your recipe.', 'The flavour is in the details.', 'It\'s okay to like extraordinary.'],
       faqs: FAQS.map((f, i) => {
         const open = !!this.state.faqOpen[i];
         return { ...f, toggle: () => this.toggleFaq(i), maxHeight: open ? '400px' : '0px', mark: open ? '−' : '+', bg: open ? '#F3E9D2' : 'transparent' };
