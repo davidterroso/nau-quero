@@ -1,12 +1,12 @@
 export const FILTERS = [
-  { key: 'identidade', label: 'Identidade', bg: '#ACC048', ink: '#FBF59C', note: 'Logótipo, paleta, tipografia e manual de marca.' },
-  { key: 'estrategia', label: 'Estratégia', bg: '#D2E8FF', ink: '#ACC048', note: 'Diagnóstico, posicionamento e planos de ação.' },
-  { key: 'digital', label: 'Presença Digital', bg: '#391D01', ink: '#FBF59C', note: 'Redes sociais, conteúdo e comunicação online.' },
+  { key: 'identidade', label: 'Identidade', bg: '#391D01', ink: '#F3E9D2', note: 'Logótipo, paleta, tipografia e manual de marca.' },
+  { key: 'estrategia', label: 'Estratégia', bg: '#391D01', ink: '#F3E9D2', note: 'Diagnóstico, posicionamento e planos de ação.' },
+  { key: 'digital', label: 'Presença Digital', bg: '#391D01', ink: '#F3E9D2', note: 'Redes sociais, conteúdo e comunicação online.' },
   { key: 'investigacao', label: 'Investigação Científica', bg: '#391D01', ink: '#F3E9D2', note: 'Tese, artigos críticos e estudos de consumidor.' },
 ];
 
-export const CAT_BG = { identidade: '#ACC048', estrategia: '#D2E8FF', digital: '#391D01', investigacao: '#ACC048' };
-export const CAT_INK = { identidade: '#FBF59C', estrategia: '#ACC048', digital: '#FBF59C', investigacao: '#391D01' };
+export const CAT_BG = { identidade: '#391D01', estrategia: '#391D01', digital: '#391D01', investigacao: '#391D01' };
+export const CAT_INK = { identidade: '#F3E9D2', estrategia: '#F3E9D2', digital: '#F3E9D2', investigacao: '#F3E9D2' };
 export const LAYER_LABEL = { identidade: 'Cone', estrategia: 'Sabor', digital: 'Topping', investigacao: 'Research' };
 
 export const PROJECTS = [

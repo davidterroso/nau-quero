@@ -29,6 +29,7 @@
   a { color:#690A20; }
   a:hover { color:#391D01; }
   @keyframes nqFloat { 0%,100% { transform:translateY(0) rotate(-3deg); } 50% { transform:translateY(-10px) rotate(-1.5deg); } }
+  @keyframes nqReveal { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
 
   @media (max-width: 860px) {
     .nq-menu-btn { display:inline-flex !important; }
@@ -100,7 +101,7 @@
               </sc-if>
             </button>
         <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}">
-          <div style="border-top:1px solid rgba(57,29,1,0.28); padding:clamp(18px,2vw,28px) clamp(8px,1.2vw,16px) clamp(24px,2.4vw,32px); display:flex; gap:clamp(20px,3vw,44px); flex-wrap:wrap; background:#F3E9D2; color:#391D01;">
+          <div style="animation:nqReveal .35s ease; border-top:1px solid rgba(57,29,1,0.28); padding:clamp(18px,2vw,28px) clamp(8px,1.2vw,16px) clamp(24px,2.4vw,32px); display:flex; gap:clamp(20px,3vw,44px); flex-wrap:wrap; background:#F3E9D2; color:#391D01;">
             <div style="flex:1 1 min(100%,420px); min-width:0; display:flex; flex-direction:column; gap:14px;">
               <p style="font-size:14px; line-height:1.65; margin:0; max-width:66ch;">{{ p.lead }}</p>
               <sc-for list="{{ p.bullets }}" as="b" hint-placeholder-count="0">
@@ -108,7 +109,7 @@
               </sc-for>
               <div style="display:flex; gap:7px; flex-wrap:wrap;">
                 <sc-for list="{{ p.chips }}" as="ch" hint-placeholder-count="0">
-                  <span style="display:inline-flex; align-items:center; white-space:nowrap; font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.015em; border:1px solid rgba(57,29,1,0.28); border-radius:999px; padding:6px 11px;">{{ ch }}</span>
+                  <span style="display:inline-flex; align-items:center; white-space:nowrap; font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.015em; border:1px solid rgba(57,29,1,0.28); border-radius:999px; padding:6px 11px; transition:transform .25s ease, background .25s ease;" style-hover="transform:translateY(-2px); background:#F3E9D2;">{{ ch }}</span>
                 </sc-for>
               </div>
               <sc-if value="{{ p.hasDots }}" hint-placeholder-val="{{ false }}">
@@ -158,7 +159,7 @@
         </div>
       </div>
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <a href="https://www.instagram.com/nauquero.mr/" target="_blank" rel="noopener" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#ACC048;">@nauquero.mr</a>
+        <a href="https://www.instagram.com/nauquero.mr/" target="_blank" rel="noopener" style="display:none; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; align-items:center;" style-hover="color:#ACC048;">@nauquero.mr</a>
         <a href="mailto:nauquero.mr@gmail.com" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#ACC048;">nauquero.mr@gmail.com</a>
         <a href="https://www.linkedin.com/in/mariana-rodrigues-2108/" target="_blank" rel="noopener" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#ACC048;">LinkedIn</a>
       </div>
@@ -182,7 +183,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { active: null, open: {}, data: null };
+  state = { active: 'investigacao', open: {}, data: null };
 
   componentDidMount() {
     import('./work-data.js').then(m => { this._d = m; this.setState({ data: true }); });
