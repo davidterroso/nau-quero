@@ -162,12 +162,12 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:clamp(12px,1.4vw,18px); align-items:start;">
       <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="4">
         <a data-reveal href="./work.html" style="display:flex; flex-direction:column; gap:10px; text-decoration:none; color:#391D01; transition:transform .3s ease;" style-hover="transform:translateY(-3px);">
-          <div style="position:relative; aspect-ratio:1/1; border:1px solid rgba(57,29,1,0.22); border-radius:10px; overflow:hidden; background:{{ pr.bg }};">
+          <div style="position:relative; aspect-ratio:1/1; border:1px solid rgba(57,29,1,0.22); border-radius:10px; overflow:hidden; background:{{ pr.bg }}; box-shadow:{{ pr.glow }}; transition:box-shadow .35s ease;">
             <image-slot id="{{ pr.slot }}" shape="rect" placeholder="{{ pr.ph }}" style="position:absolute; inset:0;"></image-slot>
           </div>
           <div style="display:flex; flex-direction:column; gap:3px;">
             <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:17.4px; line-height:1.1; margin:0;">{{ pr.name }}</h3>
-            <span style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.015em; opacity:0.65;">{{ pr.sector }}</span>
+            <span style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.015em; color:{{ pr.accent }}; opacity:0.9;">{{ pr.sector }}</span>
           </div>
         </a>
       </sc-for>
@@ -224,19 +224,19 @@ const SERVICES = [
   { num: '02', layer: 'Sabor', bg: '#391D01', ink: '#F3E9D2', accent: '#D2E8FF', glow: '0 0 46px 12px rgba(210,232,255,0.5)',
     title: 'Qual a estratégia da tua marca?',
     desc: 'Posicionamento, persona e narrativa — o sabor que só a tua marca tem.' },
-  { num: '03', layer: 'Topping', bg: '#391D01', ink: '#F3E9D2', accent: '#FBF59C', glow: '0 0 46px 12px rgba(251,245,156,0.5)',
+  { num: '03', layer: 'Topping', bg: '#391D01', ink: '#F3E9D2', accent: '#F5C232', glow: '0 0 46px 12px rgba(245,194,50,0.5)',
     title: 'Como se apresenta a tua marca nas redes sociais?',
     desc: 'Conteúdo, tom de voz e calendário editorial para apareceres onde importa.' },
 ];
 
 const PROJECTS = [
-  { num: '01', name: 'Raízes Frescas', sector: 'Mercearia local', slot: 'home-proj-01', ph: 'imagem do projeto', bg: '#ACC048', ratio: '16/10', span: 'span 2',
+  { num: '01', name: 'Raízes Frescas', sector: 'Mercearia local', slot: 'home-proj-01', ph: 'imagem do projeto', bg: '#391D01', accent: '#ACC048', glow: '0 0 46px 12px rgba(172,192,72,0.5)', ratio: '16/10', span: 'span 2',
     teaser: 'Estratégia, identidade, direção criativa e aplicações para uma mercearia de bairro.' },
-  { num: '02', name: 'Casa Gelo', sector: 'Gelataria', slot: 'home-proj-02', ph: 'imagem do projeto', bg: '#ACC048', ratio: '4/5', span: 'auto',
+  { num: '02', name: 'Casa Gelo', sector: 'Gelataria', slot: 'home-proj-02', ph: 'imagem do projeto', bg: '#391D01', accent: '#ACC048', glow: '0 0 46px 12px rgba(172,192,72,0.5)', ratio: '4/5', span: 'auto',
     teaser: 'Uma gelataria com nome próprio e uma linguagem visual que sabe a verão inteiro.' },
-  { num: '03', name: 'Vinte Valores', sector: 'Educação', slot: 'home-proj-03', ph: 'imagem do projeto', bg: '#F3E9D2', ratio: '4/5', span: 'auto',
+  { num: '03', name: 'Vinte Valores', sector: 'Educação', slot: 'home-proj-03', ph: 'imagem do projeto', bg: '#391D01', accent: '#D2E8FF', glow: '0 0 46px 12px rgba(210,232,255,0.5)', ratio: '4/5', span: 'auto',
     teaser: 'Posicionamento e identidade para um projeto educativo que fala com pais e alunos.' },
-  { num: '04', name: 'Atlântica Rooms', sector: 'Hotelaria', slot: 'home-proj-04', ph: 'imagem do projeto', bg: '#F3E9D2', ratio: '16/10', span: 'span 2',
+  { num: '04', name: 'Atlântica Rooms', sector: 'Hotelaria', slot: 'home-proj-04', ph: 'imagem do projeto', bg: '#391D01', accent: '#F5C232', glow: '0 0 46px 12px rgba(245,194,50,0.5)', ratio: '16/10', span: 'span 2',
     teaser: 'Marca de alojamento no litoral norte: tom de voz, identidade e presença digital.' },
 ];
 
@@ -257,8 +257,10 @@ class Component extends DCLogic {
       name: p.name,
       sector: p.categoryLabel,
       teaser: p.desc.length > 150 ? p.desc.slice(0, p.desc.slice(0, 150).lastIndexOf(' ')) + '…' : p.desc,
-      bg: d.CAT_BG[p.category] || '#F3E9D2',
-      ink: d.CAT_INK[p.category] || '#391D01',
+      bg: d.CAT_BG[p.category] || '#391D01',
+      ink: d.CAT_INK[p.category] || '#F3E9D2',
+      accent: d.CAT_ACCENT[p.category] || '#F3E9D2',
+      glow: '0 0 46px 12px rgba(' + (d.CAT_GLOW_RGB[p.category] || '105,10,32') + ',0.5)',
       slot: 'home-feat-' + (i + 1),
       ph: 'imagem de ' + p.name,
     }));
