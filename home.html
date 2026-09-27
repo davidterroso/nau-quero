@@ -25,11 +25,13 @@
 
 
 
+  html { scroll-behavior: smooth; }
   body { margin:0; background:#F3E9D2; cursor:none; }
   a { color:#690A20; }
   a:hover { color:#391D01; }
   @keyframes nqMarquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
   @keyframes nqFloat { 0%,100% { transform:translateY(0) rotate(-3deg); } 50% { transform:translateY(-10px) rotate(-1.5deg); } }
+  @keyframes nqPulse { 0%,100% { box-shadow:0 0 14px 2px rgba(105,10,32,0.45); } 50% { box-shadow:0 0 22px 5px rgba(105,10,32,0.7); } }
 
   @media (max-width: 860px) {
     .nq-menu-btn { display:inline-flex !important; }
@@ -53,7 +55,7 @@
   <div style="position:fixed; inset:0; z-index:9; pointer-events:none; opacity:0.35; mix-blend-mode:multiply; background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27180%27 height=%27180%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.85%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27180%27 height=%27180%27 filter=%27url(%23n)%27/%3E%3C/svg%3E'); background-size:180px 180px;"></div>
 
   <header style="position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; row-gap:8px; padding:13px 5%; background:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28);">
-    <a href="./home.html" style="display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:#391D01;">
+    <a href="./home.html" style="display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:#391D01; transition:transform .3s ease;" style-hover="transform:rotate(-4deg) scale(1.05);">
       <img src="./images/nauquero-logo-brown.png" alt="NAU QUERO" style="height:22px; width:auto; display:block;" />
     </a>
     <input type="checkbox" id="nq-menu-toggle" class="nq-menu-toggle" style="position:absolute; opacity:0; pointer-events:none;"><label for="nq-menu-toggle" class="nq-menu-btn" aria-label="Abrir menu" style="display:none; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid rgba(57,29,1,0.28); border-radius:10px; cursor:pointer; flex:0 0 auto;"><svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1H18" stroke="#391D01" stroke-width="1.6"/><path d="M0 6.5H18" stroke="#391D01" stroke-width="1.6"/><path d="M0 12H18" stroke="#391D01" stroke-width="1.6"/></svg></label><nav class="nq-nav" style="display:flex; align-items:center; gap:2px; flex-wrap:wrap; row-gap:6px; justify-content:flex-end;">
@@ -61,7 +63,7 @@
       <a href="./about.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Sobre</a>
       <a href="./menu.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">O Menu</a>
       <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Projetos</a>
-      <a href="./build-your-own.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; background:#690A20; color:#F3E9D2; text-decoration:none; padding:14px 22px; border:2px solid #690A20; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; margin-left:6px; transition:transform .3s ease, background .3s ease, color .3s ease;" style-hover="transform:rotate(-0.7deg); background:#F3E9D2; color:#690A20;">Monta o teu gelado →</a>
+      <a href="./build-your-own.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; background:#690A20; color:#F3E9D2; text-decoration:none; padding:14px 22px; border:2px solid #690A20; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; margin-left:6px; transition:transform .3s ease, background .3s ease, color .3s ease; animation:nqPulse 2.8s ease-in-out infinite;" style-hover="transform:rotate(-0.7deg); background:#F3E9D2; color:#690A20;">Monta o teu gelado →</a>
     </nav>
   </header>
 
@@ -174,7 +176,7 @@
     </div>
   </section>
 
-  <section style="padding:clamp(44px,5.5vw,80px) 5%; text-align:center; background:#690A20; color:#F3E9D2; border-radius:0 0 50% 50% / 0 0 60px 60px;">
+  <section style="padding:clamp(44px,5.5vw,80px) 5%; text-align:center; background:#690A20; color:#F3E9D2; border-radius:50% 50% 0 0 / 60px 60px 0 0;">
     <div data-reveal style="max-width:900px; margin:0 auto;">
       <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(28.3px,5.31vw,99.1px); line-height:0.86; letter-spacing:-0.04em; margin:0 0 clamp(20px,2.6vw,30px); color:#F3E9D2;">Ready to order something <span style="font-style:italic; color:#FFA6A5;">extra?</span></h2>
       <p style="font-size:clamp(14.6px,1.72vw,18.1px); line-height:1.6; max-width:48ch; margin:0 auto clamp(24px,3vw,36px); color:#F3E9D2;">Conta-me em que ponto está a tua marca. A primeira conversa é só isso: uma conversa.</p>
