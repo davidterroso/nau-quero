@@ -144,8 +144,12 @@
       </div>
 
       <div style="order:4; grid-column:1 / -1; display:flex; flex-direction:column; gap:12px;">
-        <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0; text-align:center;">3º passo · Envia o pedido</p>
-        <button type="submit" form="pedido-form" disabled="{{ sending }}" style="width:100%; box-sizing:border-box; background:#690A20; color:#F3E9D2; font-family:'League Spartan',sans-serif; font-size:14px; letter-spacing:0.015em; padding:18px 24px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer; opacity:{{ sendingOpacity }}; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.4deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">{{ submitLabel }}</button>
+        <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0; text-align:center; display:{{ stepLabelDisplay }};">3º passo · Envia o pedido</p>
+        <div style="display:{{ successDisplay }}; align-items:center; gap:14px; border:1px solid #391D01; border-radius:16px; background:#ACC048; color:#391D01; padding:18px 22px; text-align:center; flex-direction:column;">
+          <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(19px,2vw,24px); margin:0;">O seu pedido foi registado! ✓</h3>
+          <p style="font-family:'League Spartan',sans-serif; font-size:13.5px; line-height:1.6; margin:0;">Vais receber uma resposta em <strong>nauquero.mr@gmail.com</strong> dentro de 48 horas.</p>
+        </div>
+        <button type="submit" form="pedido-form" disabled="{{ sending }}" style="display:{{ buttonDisplay }}; width:100%; box-sizing:border-box; background:#690A20; color:#F3E9D2; font-family:'League Spartan',sans-serif; font-size:14px; letter-spacing:0.015em; padding:18px 24px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer; opacity:{{ sendingOpacity }}; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.4deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">{{ submitLabel }}</button>
         <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; line-height:1.7; margin:0; opacity:0.7; text-align:center;">{{ formNote }}</p>
       </div>
     </div>
@@ -202,7 +206,8 @@ const GROUPS = [
   { num: '03', layer: 'Topping', title: 'Redes Sociais & Conteúdo', hint: 'É aqui que se nota.', bg: '#391D01', ink: '#FBF59C', accent: '#690A20', key: 'toppings' },
 ];
 
-const PEDIDO_ENDPOINT = 'https://formsubmit.co/ajax/nauquero.mr@gmail.com';
+const PEDIDO_ENDPOINT = 'https://api.web3forms.com/submit';
+const PEDIDO_ACCESS_KEY = 'SUBSTITUIR_PELA_ACCESS_KEY_DO_WEB3FORMS';
 
 class Component extends DCLogic {
   state = { cone: [], base: [], toppings: [], unsure: false, sent: false, sending: false, error: false };
@@ -239,13 +244,17 @@ class Component extends DCLogic {
     this.save();
     const form = e.target;
     const data = new FormData(form);
-    data.append('_subject', 'Novo pedido — Nau Quero (' + this.recipeName() + ')');
-    data.append('_template', 'table');
+    data.append('access_key', PEDIDO_ACCESS_KEY);
+    data.append('subject', 'Novo pedido — Nau Quero (' + this.recipeName() + ')');
     data.append('receita', this.recipeName());
     this.setState({ sending: true, error: false });
     fetch(PEDIDO_ENDPOINT, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data })
-      .then(res => { if (!res.ok) throw new Error('bad response'); return res.json(); })
-      .then(() => { this.setState({ sending: false, sent: true, error: false }); form.reset(); })
+      .then(res => res.json().then(body => ({ ok: res.ok, body })))
+      .then(({ ok, body }) => {
+        if (!ok || !body.success) throw new Error(body && body.message || 'bad response');
+        this.setState({ sending: false, sent: true, error: false });
+        form.reset();
+      })
       .catch(() => { this.setState({ sending: false, error: true }); });
   };
 
@@ -328,13 +337,16 @@ class Component extends DCLogic {
       progress: unsure ? 'em aberto' : done + '/3',
       recipeName: this.recipeName(),
       recipeLines: lines,
-      submitLabel: this.state.sending ? 'A enviar…' : (this.state.sent ? 'Pedido enviado ✓' : 'Enviar pedido →'),
+      submitLabel: this.state.sending ? 'A enviar…' : 'Enviar pedido →',
       sending: this.state.sending ? 'true' : '',
       sendingOpacity: this.state.sending ? '0.6' : '1',
-      formNote: this.state.error
-        ? 'Não foi possível enviar agora. Escreve-me diretamente para nauquero.mr@gmail.com, por favor.'
-        : (this.state.sent
-          ? 'Pedido enviado! Vais receber uma resposta em nauquero.mr@gmail.com dentro de 48 horas.'
+      stepLabelDisplay: this.state.sent ? 'none' : 'block',
+      buttonDisplay: this.state.sent ? 'none' : 'block',
+      successDisplay: this.state.sent ? 'flex' : 'none',
+      formNote: this.state.sent
+        ? ''
+        : (this.state.error
+          ? 'Não foi possível enviar agora. Escreve-me diretamente para nauquero.mr@gmail.com, por favor.'
           : 'Ao enviares, o pedido chega diretamente ao email da Nau Quero.'),
     };
   }
