@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;1,400;1,500&family=League+Spartan:wght@300;400;500;600&family=Indie+Flower&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-Light.otf') format('opentype'); font-weight:300; font-style:normal; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-LightItalic.otf') format('opentype'); font-weight:300; font-style:italic; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-Regular.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-Italic.otf') format('opentype'); font-weight:400; font-style:italic; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-Bold.otf') format('opentype'); font-weight:500 700; font-style:normal; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-BoldItalic.otf') format('opentype'); font-weight:500 700; font-style:italic; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+
+
+  body { margin:0; background:#F3E9D2; cursor:none; }
+  a { color:#690A20; }
+  a:hover { color:#391D01; }
+  @keyframes nqPop { 0% { transform:scale(0.4); opacity:0; } 60% { transform:scale(1.12); opacity:1; } 100% { transform:scale(1); opacity:1; } }
+  @keyframes nqFloat { 0%,100% { transform:translateY(0) rotate(-3deg); } 50% { transform:translateY(-10px) rotate(-1.5deg); } }
+</style>
+<script src="./ui-sound.js"></script>
+</helmet>
+<div style="font-family:'League Spartan',sans-serif; background:#F3E9D2; color:#391D01; overflow-x:hidden;">
+  <div style="position:fixed; inset:0; z-index:9998; pointer-events:none; opacity:0.07; background-image:url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%3E%3Cfilter%20id%3D%27n%27%20x%3D%270%27%20y%3D%270%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%272.6%27%20numOctaves%3D%272%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200.96%200%200%200%200%200.88%200%200%200%200%200.72%2012%200%200%200%20-7.4399999999999995%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27300%27%20height%3D%27300%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E&quot;), url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%3E%3Cfilter%20id%3D%27n%27%20x%3D%270%27%20y%3D%270%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%272.4%27%20numOctaves%3D%272%27%20seed%3D%2711%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200.08%200%200%200%200%200.03%200%200%200%200%200%2012%200%200%200%20-7.5600000000000005%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27300%27%20height%3D%27300%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E&quot;), url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%3E%3Cfilter%20id%3D%27n%27%20x%3D%270%27%20y%3D%270%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%273.5%27%20numOctaves%3D%272%27%20seed%3D%277%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200.9%200%200%200%200%200.78%200%200%200%200%200.58%208%200%200%200%20-4.8%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27300%27%20height%3D%27300%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E&quot;); background-size:300px 300px, 340px 340px, 260px 260px;"></div>
+  <div style="position:fixed; inset:0; z-index:9; pointer-events:none; opacity:0.35; mix-blend-mode:multiply; background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27180%27 height=%27180%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.85%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27180%27 height=%27180%27 filter=%27url(%23n)%27/%3E%3C/svg%3E'); background-size:180px 180px;"></div>
+
+  <header style="position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; row-gap:8px; padding:12px 5%; background:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28);">
+    <a href="./Home.dc.html" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:#391D01; white-space:nowrap;">
+      <img src="./images/nauquero-logo-brown.png" alt="NAU QUERO" style="height:21px; width:auto; display:block;" />
+    </a>
+    <nav style="display:flex; align-items:center; gap:2px; flex-wrap:wrap; row-gap:6px; justify-content:flex-end;">
+      <a href="./Home.dc.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; white-space:nowrap; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Início</a>
+      <a href="./About.dc.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; white-space:nowrap; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Sobre</a>
+      <a href="./Menu.dc.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; white-space:nowrap; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">O Menu</a>
+      <a href="./Work.dc.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; white-space:nowrap; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Projetos</a>
+      <a href="./BuildYourOwn.dc.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; background:#690A20; color:#F3E9D2; text-decoration:none; padding:14px 22px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; margin-left:6px; white-space:nowrap; transition:transform .3s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.7deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">Monta o teu gelado →</a>
+    </nav>
+  </header>
+
+  <section style="position:relative; padding:clamp(44px,5vw,80px) 5% clamp(40px,4.5vw,64px); background:#690A20; color:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28); overflow:hidden;">
+    <div style="position:absolute; inset:0; opacity:0.35; background-image:radial-gradient(#F3E9D2 1.5px, transparent 1.6px); background-size:22px 22px;"></div>
+    <div style="position:relative; max-width:1180px; margin:0 auto;">
+      <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#C69A62; margin:0 0 16px;">Começar um projeto · Monta o teu gelado</p>
+      <h1 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(26.9px,4.53vw,73.6px); line-height:0.88; letter-spacing:-0.035em; margin:0 0 20px; max-width:22ch;">Ready to order something <span style="font-style:italic; color:#FFA6A5;">extra?</span></h1>
+      <div style="display:flex; gap:clamp(18px,3vw,44px); align-items:center; flex-wrap:wrap;">
+      <p style="font-size:clamp(14px,1.46vw,17px); line-height:1.6; max-width:56ch; margin:0; flex:1 1 min(100%,300px);">Escolhe o cone, a base e os toppings da tua marca. A receita segue com o pedido — nada de formulário em branco.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pedido" style="padding:clamp(44px,5vw,84px) 5%; background:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28);">
+    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr)); gap:clamp(18px,2.4vw,32px); align-items:stretch;">
+      <div style="grid-column:1 / -1; display:flex; flex-direction:column; gap:clamp(14px,1.6vw,22px); min-width:0;">
+        <div><p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0 0 6px;">1º passo</p>
+        <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(20px,2vw,27px); line-height:1.02; letter-spacing:-0.02em; margin:0 0 14px;">Escolhe as camadas do teu gelado.</h2></div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:clamp(14px,1.6vw,22px); align-items:stretch;">
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+          <button type="button" onClick="{{ g.pick }}" style="text-align:left; border:2px solid {{ g.border }}; border-radius:16px; padding:clamp(20px,2vw,26px); background:{{ g.bg }}; color:{{ g.ink }}; display:flex; flex-direction:column; min-width:0; cursor:pointer; font-family:'League Spartan',sans-serif; transition:transform .3s ease, box-shadow .35s ease, border-color .3s ease; box-shadow:{{ g.shadow }};" style-hover="transform:translateY(-3px);">
+            <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; margin:0 0 8px; color:{{ g.accent }};">{{ g.num }} · {{ g.layer }}</p>
+            <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(22px,2.2vw,30px); line-height:1.05; letter-spacing:-0.015em; margin:0 0 8px;">{{ g.title }}</h2>
+            <p style="font-size:12.5px; line-height:1.55; margin:0 0 18px;">{{ g.hint }}</p>
+            <span style="margin-top:auto; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; border:1px solid currentColor; border-radius:999px; padding:8px 14px; white-space:nowrap;">{{ g.mark }}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <button type="button" onClick="{{ toggleUnsure }}" style="display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; text-align:left; width:100%; box-sizing:border-box; border:1px dashed rgba(57,29,1,0.3); border-radius:16px; padding:clamp(20px,2vw,26px); background:{{ unsureBg }}; color:{{ unsureFg }}; cursor:pointer; font-family:'League Spartan',sans-serif; transition:background .25s ease;">
+        <span style="min-width:0;">
+          <span style="display:block; font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(17.2px,1.72vw,22.4px); line-height:1.05; margin-bottom:6px;">Ainda por escolher</span>
+          <span style="display:block; font-size:12.5px; line-height:1.55; max-width:60ch;">Não sabes o que queres? Sem problema, nós ajudamos-te a escolher!</span>
+        </span>
+        <span style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; border:1px solid currentColor; border-radius:999px; white-space:nowrap; padding:11px 16px; white-space:nowrap; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;">{{ unsureMark }}</span>
+      </button>
+      </div>
+
+      <form id="pedido-form" onSubmit="{{ submit }}" style="order:2; border:1px solid rgba(57,29,1,0.28); border-radius:16px; background:#F3E9D2; padding:clamp(22px,2.4vw,34px); display:flex; flex-direction:column; gap:20px; min-width:0;">
+        <div>
+          <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0 0 8px;">2º passo · O pedido</p>
+          <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+            <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(18.7px,2.03vw,26.5px); line-height:1.02; letter-spacing:-0.02em; margin:0; flex:1 1 auto;">Diz<span style="font-family:'League Spartan',sans-serif; font-style:normal;">-</span>me quem és.</h2>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:16px;">
+          <label style="display:flex; flex-direction:column; gap:7px;">
+            <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; ">Nome</span>
+            <input type="text" placeholder="O teu nome" style="background:transparent; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:13px 15px; font-family:'League Spartan',sans-serif; font-size:14px; color:#391D01;"></input>
+          </label>
+          <label style="display:flex; flex-direction:column; gap:7px;">
+            <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; ">Email</span>
+            <input type="email" placeholder="onde te respondo" style="background:transparent; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:13px 15px; font-family:'League Spartan',sans-serif; font-size:14px; color:#391D01;"></input>
+          </label>
+          <label style="display:flex; flex-direction:column; gap:7px;">
+            <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; ">Nome da marca</span>
+            <input type="text" placeholder="como se chama" style="background:transparent; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:13px 15px; font-family:'League Spartan',sans-serif; font-size:14px; color:#391D01;"></input>
+          </label>
+          <label style="display:flex; flex-direction:column; gap:7px;">
+            <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; ">Website ou Instagram</span>
+            <input type="text" placeholder="@ ou link" style="background:transparent; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:13px 15px; font-family:'League Spartan',sans-serif; font-size:14px; color:#391D01;"></input>
+          </label>
+        </div>
+
+        <label style="display:flex; flex-direction:column; gap:7px;">
+          <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; ">Conta-me mais sobre a tua marca</span>
+          <textarea rows="5" placeholder="Em que ponto estás, o que te incomoda, o que gostarias de mudar." style="background:transparent; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:13px 15px; font-family:'League Spartan',sans-serif; font-size:14px; line-height:1.55; color:#391D01; resize:vertical;"></textarea>
+        </label>
+
+      </form>
+
+      <div style="order:3; border:1px solid rgba(57,29,1,0.28); border-radius:16px; background:#391D01; color:#F3E9D2; padding:clamp(22px,2.4vw,32px); min-width:0; display:flex; flex-direction:column;">
+        <div style="margin-bottom:16px;">
+          <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#F3E9D2; margin:0 0 6px;">A tua receita</p>
+          <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(20px,2vw,27px); line-height:1.02; letter-spacing:-0.02em; margin:0; color:#F3E9D2;">Vê o gelado a ganhar forma.</h2>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:center; flex:1; margin-bottom:20px;">
+          <div style="position:relative; width:min(240px,70%); aspect-ratio:408 / 612;">
+            <img src="./images/gelado-cone-cartoon2.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; display:block; opacity:{{ coneOpacity }}; transform:translateY({{ coneShift }}); transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);" />
+            <img src="./images/gelado-scoop-cartoon2.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; display:block; opacity:{{ scoopOpacity }}; transform:translateY({{ scoopShift }}); transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);" />
+            <img src="./images/gelado-sprinkles-cartoon2.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; display:block; opacity:{{ toppingOpacity }}; transform:translateY({{ sprinkleShift }}); transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);" />
+          </div>
+        </div>
+        <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(17.2px,1.81vw,23.2px); line-height:1.06; letter-spacing:-0.015em; margin:0; color:#F3E9D2; text-align:center;">{{ recipeName }}</h3>
+      </div>
+
+      <div style="order:4; grid-column:1 / -1; display:flex; flex-direction:column; gap:12px;">
+        <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0; text-align:center;">3º passo · Envia o pedido</p>
+        <button type="submit" form="pedido-form" style="width:100%; box-sizing:border-box; background:#690A20; color:#F3E9D2; font-family:'League Spartan',sans-serif; font-size:14px; letter-spacing:0.015em; padding:18px 24px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.4deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">Enviar pedido →</button>
+        <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; line-height:1.7; margin:0; opacity:0.7; text-align:center;">{{ formNote }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(44px,5vw,80px) 5%; border-bottom:1px solid rgba(57,29,1,0.28);">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:clamp(18px,2.2vw,28px); align-items:stretch;">
+      <div style="border:1px solid rgba(57,29,1,0.28); border-radius:16px; background:#391D01; color:#F3E9D2; padding:clamp(22px,2.4vw,32px);">
+        <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; color:#F3E9D2; margin:0 0 16px;">Contacto direto</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="mailto:nauquero.mr@gmail.com" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; border-bottom:1px solid rgba(243,233,210,0.25);" style-hover="color:#ACC048;">nauquero.mr@gmail.com</a>
+          <a href="https://www.instagram.com/nauquero.mr/" target="_blank" rel="noopener" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; border-bottom:1px solid rgba(243,233,210,0.25);" style-hover="color:#ACC048;">@nauquero.mr</a>
+          <a href="https://www.linkedin.com/in/mariana-rodrigues-2108/" target="_blank" rel="noopener" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#ACC048;">LinkedIn · Mariana Rodrigues</a>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(57,29,1,0.28); border-radius:16px; background:#F3E9D2; padding:clamp(22px,2.4vw,32px);">
+        <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; color:#690A20; margin:0 0 12px;">Tempo de resposta</p>
+        <p style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(23.4px,2.65vw,37.4px); line-height:1; letter-spacing:-0.02em; margin:0 0 12px;"><span style="font-family:'Petrona',Georgia,serif;">48</span> horas</p>
+        <p style="font-size:14px; line-height:1.6; margin:0;">Respondo em dias úteis com uma leitura honesta do que me contaste — e a proposta de uma conversa de 30 a 45 minutos, sem compromisso.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#391D01; color:#F3E9D2; padding:clamp(40px,5vw,72px) 5% 30px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="display:flex; gap:clamp(24px,3.5vw,56px); flex-wrap:wrap; justify-content:space-between; align-items:flex-start; padding-bottom:32px; border-bottom:1px solid rgba(243,233,210,0.25);">
+        <div>
+          <img src="./images/nauquero-logo-brown.png" alt="NAU QUERO" style="height:24px; width:auto; display:block; margin:0 0 6px; filter:brightness(0) invert(1) sepia(0) saturate(0) brightness(2);" />
+          <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; margin:0; opacity:0.7;">Mariana Rodrigues · Vila do Conde</p>
+        </div>
+        <nav style="display:flex; flex-direction:column; gap:8px;">
+          <a href="./Home.dc.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Início</a>
+          <a href="./About.dc.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Sobre</a>
+          <a href="./Menu.dc.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">O Menu</a>
+          <a href="./Work.dc.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Projetos</a>
+          <a href="./BuildYourOwn.dc.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Monta o teu gelado</a>
+        </nav>
+      <nav style="display:flex; flex-direction:column; gap:10px;">
+        <a href="./Menu.dc.html#faq" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Perguntas frequentes</a>
+      </nav>
+      </div>
+      <div style="padding-top:24px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center;">
+        <p style="font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(15.5px,1.72vw,22.4px); margin:0; color:#F3E9D2;">It<span style="font-family:'Petrona',Georgia,serif;">’</span>s okay to like extraordinary.</p>
+        <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; margin:0; opacity:0.55;">© 2026 NAU QUERO</p>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}">
+const GROUPS = [
+  { num: '01', layer: 'Cone', title: 'Identidade Visual', hint: 'A identidade visual — a forma que a marca vai ter.', bg: '#ACC048', ink: '#FBF59C', accent: '#690A20', key: 'cone' },
+  { num: '02', layer: 'Sabor', title: 'Estratégia de Marca', hint: 'A estratégia — o que sustenta todas as decisões.', bg: '#D2E8FF', ink: '#ACC048', accent: '#690A20', key: 'base' },
+  { num: '03', layer: 'Topping', title: 'Redes Sociais & Conteúdo', hint: 'É aqui que se nota.', bg: '#391D01', ink: '#FBF59C', accent: '#690A20', key: 'toppings' },
+];
+
+class Component extends DCLogic {
+  state = { cone: [], base: [], toppings: [], unsure: false, sent: false };
+
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem('nq-recipe');
+      if (raw) {
+        const r = JSON.parse(raw);
+        const arr = (v) => Array.isArray(v) ? v : (v ? [v] : []);
+        this.setState({ cone: arr(r.cone), base: arr(r.base), toppings: arr(r.toppings), unsure: !!r.unsure });
+      }
+    } catch (err) {}
+    import('./dot-cursor.js').then(m => { this._dot = m.initDotCursor(); });
+    import('./reveal.js').then(m => { this._destroy = m.initReveal(document); });
+  }
+  componentWillUnmount() { if (this._destroy) this._destroy(); if (this._dot) this._dot(); }
+
+  save() {
+    try { localStorage.setItem('nq-recipe', JSON.stringify({ cone: this.state.cone, base: this.state.base, toppings: this.state.toppings, unsure: this.state.unsure, name: this.recipeName() })); } catch (err) {}
+  }
+  pick(key, value) {
+    this.setState(s => {
+      const cur = s[key] || [];
+      return { [key]: cur.includes(value) ? cur.filter(v => v !== value) : cur.concat([value]), unsure: false };
+    }, () => this.save());
+  }
+  toggleUnsure = () => {
+    this.setState(s => s.unsure ? { unsure: false } : { unsure: true, cone: [], base: [], toppings: [] }, () => this.save());
+  };
+  submit = (e) => { e.preventDefault(); this.save(); this.setState({ sent: true }); };
+
+  recipeName() {
+    if (this.state.unsure) return 'Ainda por escolher — vamos descobrir juntas';
+    const c = this.state.cone || [], b = this.state.base || [], t = this.state.toppings || [];
+    if (!c.length && !b.length && !t.length) return 'Ainda por servir';
+    const parts = [];
+    if (c.length) parts.push('Cone'); if (b.length) parts.push('Sabor'); if (t.length) parts.push('Topping');
+    return parts.length === 3 ? 'O gelado completo' : parts.join(' · ');
+  }
+
+  renderVals() {
+    const unsure = this.state.unsure;
+    const c = this.state.cone || [], b = this.state.base || [];
+    const cone = c.length, base = b.length;
+    const t = this.state.toppings || [];
+    // the gelato is a swirl, like the splash: 9 arms, 3 per layer, growing out from the centre
+    const CX = 60, CY = 72, MAXR = 40, TURNS = 1.7;
+    const COLORS = ['#ACC048', '#D2E8FF', '#391D01'];
+    const layers = COLORS.map(color => ({ on: base > 0, color }));
+    const armCount = 9;
+    const arms = [];
+    for (let k = 0; k < armCount; k++) {
+      const layer = layers[k % 3];
+      const off = (k / armCount) * Math.PI * 2;
+      let d = '', len = 0, px = 0, py = 0;
+      const steps = 60;
+      for (let i = 0; i <= steps; i++) {
+        const u = i / steps;
+        const r = Math.pow(u, 0.82) * MAXR;
+        const wob = Math.sin(u * 7 + k) * 0.07;
+        const th = off + u * TURNS * Math.PI * 2 + wob;
+        const x = CX + Math.cos(th) * r, y = CY + Math.sin(th) * r * 0.94;
+        if (i) len += Math.hypot(x - px, y - py);
+        d += (i ? ' L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1);
+        px = x; py = y;
+      }
+      arms.push({ d, color: layer.color, w: '4.2', len: len.toFixed(1), offset: layer.on ? '0' : len.toFixed(1), opacity: layer.on ? '0.95' : '0' });
+    }
+    const sprinkles = [];
+    for (let i = 0; i < 18; i++) {
+      const a = i * 2.39996, r = 8 + ((i * 37) % 29);
+      const x = CX + Math.cos(a) * r, y = CY + Math.sin(a) * r * 0.94;
+      const rot = (i * 71) % 180 * Math.PI / 180, h = 3.2;
+      sprinkles.push({ x1: (x - Math.cos(rot) * h).toFixed(1), y1: (y - Math.sin(rot) * h).toFixed(1), x2: (x + Math.cos(rot) * h).toFixed(1), y2: (y + Math.sin(rot) * h).toFixed(1), color: COLORS[i % 3], opacity: t.length ? '1' : '0' });
+    }
+    const dim = 'rgba(243,233,210,0.5)';
+    const lines = unsure
+      ? [{ text: 'SEM ESCOLHAS · ajudamos-te a decidir na primeira conversa', color: '#F3E9D2' }]
+      : [
+        { text: '01 CONE · ' + (cone ? 'escolhido' : 'por escolher'), color: cone ? '#F3E9D2' : dim },
+        { text: '02 SABOR · ' + (base ? 'escolhido' : 'por escolher'), color: base ? '#F3E9D2' : dim },
+        { text: '03 TOPPING · ' + (t.length ? 'escolhido' : 'por escolher'), color: t.length ? '#F3E9D2' : dim },
+      ];
+    const done = (cone ? 1 : 0) + (base ? 1 : 0) + (t.length ? 1 : 0);
+
+    return {
+      groups: GROUPS.map(g => {
+        const on = (this.state[g.key] || []).length > 0;
+        return {
+          ...g,
+          mark: on ? 'Escolhido ✓' : 'Escolher',
+          border: on ? '#391D01' : 'rgba(57,29,1,0.28)',
+          shadow: on ? '0 0 22px 3px rgba(172,192,72,0.9)' : '0 0 14px 2px rgba(105,10,32,0.35)',
+          pick: () => this.pick(g.key, g.layer),
+        };
+      }),
+      toggleUnsure: this.toggleUnsure,
+      unsureBg: unsure ? '#391D01' : 'transparent',
+      unsureFg: unsure ? '#F3E9D2' : '#391D01',
+      unsureMark: unsure ? 'Escolhido ✓' : 'Escolher',
+      arms,
+      coneOpacity: cone ? '1' : '0',
+      coneShift: cone ? '0px' : '14px',
+      scoopOpacity: base ? '1' : '0',
+      scoopShift: base ? '0px' : '-14px',
+      toppingOpacity: t.length ? '1' : '0',
+      sprinkleShift: t.length ? '0px' : '-18px',
+      progress: unsure ? 'em aberto' : done + '/3',
+      recipeName: this.recipeName(),
+      recipeLines: lines,
+      formNote: this.state.sent
+        ? 'Pedido registado neste protótipo — o formulário ainda não envia emails. Escreve-me para nauquero.mr@gmail.com para falarmos já.'
+        : 'Este formulário é uma maquete: ainda não envia. O email e o Instagram estão a funcionar.',
+    };
+  }
+}
+</script>
+</body>
+</html>
