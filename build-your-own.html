@@ -8,6 +8,7 @@
 <body>
 <x-dc>
 <helmet>
+<title>Monta o teu gelado — Nau Quero</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;1,400;1,500&family=League+Spartan:wght@300;400;500;600&family=Indie+Flower&display=swap" rel="stylesheet">
 <style>
@@ -255,7 +256,7 @@ class Component extends DCLogic {
         this.setState({ sending: false, sent: true, error: false });
         form.reset();
       })
-      .catch(() => { this.setState({ sending: false, error: true }); });
+      .catch((err) => { console.error('Nau Quero — falha ao enviar pedido:', err); this.setState({ sending: false, error: true }); });
   };
 
   recipeName() {
