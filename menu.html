@@ -100,6 +100,39 @@
     </div>
   </section>
 
+  <section style="padding:clamp(64px,8vw,120px) 5%; background:#391D01; color:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28);">
+    <div data-reveal style="max-width:1100px; margin:0 auto;">
+      <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#F3E9D2; margin:0 0 20px;">03 · Método</p>
+      <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(26.9px,4.96vw,90.6px); line-height:0.86; letter-spacing:-0.035em; margin:0 0 clamp(38px,4.5vw,64px);">The flavour is in the <span style="font-style:italic; color:#ACC048;">details.</span></h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,175px),1fr)); gap:1px; background:rgba(243,233,210,0.28); border:1px solid rgba(243,233,210,0.28); border-radius:16px; overflow:hidden;">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
+          <div style="background:#391D01; padding:28px 24px 32px; display:flex; flex-direction:column; gap:12px;">
+            <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; color:#C69A62;">{{ p.num }}</span>
+            <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:22.6px; line-height:1.05; margin:0; color:#F3E9D2;">{{ p.name }}</h3>
+            <p style="font-size:12.5px; line-height:1.6; margin:0; color:#F3E9D2; opacity:0.85;">{{ p.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative; overflow:hidden; padding:clamp(64px,8vw,120px) 5%; background:#690A20; color:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28);">
+    <div style="position:absolute; inset:0; opacity:0.55; background-image:radial-gradient(#ACC048 1.5px, transparent 1.6px); background-size:22px 22px; pointer-events:none;"></div>
+    <div style="position:relative;">
+    <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#F3E9D2; margin:0 0 20px;">04 · Processo</p>
+    <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(24.1px,4.25vw,77.9px); line-height:0.88; letter-spacing:-0.035em; margin:0 0 clamp(36px,4.5vw,60px); max-width:26ch;">How we make the magic <span style="font-style:italic; color:#ACC048;">happen</span></h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,175px),1fr)); gap:20px;">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <div data-reveal data-reveal-delay="{{ st.delay }}" style="background:#F3E9D2; color:#391D01; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:26px 24px 30px; display:flex; flex-direction:column; gap:12px; transition:transform .35s ease;" style-hover="transform:translateY(-5px);">
+          <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; color:#690A20;">{{ st.num }}</span>
+          <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:22.6px; line-height:1; letter-spacing:-0.01em; margin:0;">{{ st.name }}</h3>
+          <p style="font-size:14px; line-height:1.6; margin:0;">{{ st.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+    </div>
+  </section>
+
   <section style="padding:clamp(36px,4vw,64px) 5%; border-bottom:1px solid rgba(57,29,1,0.28);">
     <div style="max-width:1180px; margin:0 auto; border:1px solid rgba(57,29,1,0.28); border-radius:16px; background:#391D01; color:#F3E9D2; padding:clamp(22px,2.4vw,32px); display:flex; gap:clamp(20px,3vw,44px); flex-wrap:wrap; align-items:flex-end; justify-content:space-between;">
       <div style="flex:1 1 min(100%,420px); min-width:0;">
@@ -202,6 +235,19 @@ const LAYERS = [
     sticker: 'O topping não é decoração. É a razão pela qual voltam.' },
 ];
 
+const PILLARS = [
+  { num: '01', name: 'Strategy', desc: 'Nada se desenha antes de se saber porquê. A decisão vem primeiro, a estética confirma-a.' },
+  { num: '02', name: 'Curiosity', desc: '"Why? But why?" — a pergunta que se repete até a resposta ser honesta.' },
+  { num: '03', name: 'Consumer Insights', desc: 'Antes de qualquer palpite, fazemos uma investigação do teu setor e da tua marca.' },
+  { num: '04', name: 'Creativity', desc: 'A ideia que ninguém previu, construída em cima de tudo o que já se sabe.' },
+];
+
+const STEPS = [
+  { num: '01', name: 'Scoop', desc: 'Diagnóstico honesto: onde está a marca hoje, o que já funciona e o que está a travar.' },
+  { num: '02', name: 'Mix', desc: 'Posicionamento, persona e narrativa. Decidimos o sabor antes de o servir.' },
+  { num: '03', name: 'Serve', desc: 'Identidade, materiais e conteúdo construídos camada a camada, prontos a usar.' },
+  { num: '04', name: 'Extra', desc: 'O detalhe que ninguém pediu e todos notam. Mais acompanhamento depois do lançamento.' },
+];
 
 const FAQS = [
   { q: 'Trabalhas só com marcas portuguesas?', a: 'Não. Trabalho sobretudo com marcas portuguesas, porque é onde conheço melhor o mercado, mas trabalho com qualquer marca que fale português, espanhol ou inglês — e todo o processo funciona à distância.' },
@@ -238,7 +284,9 @@ class Component extends DCLogic {
   renderVals() {
     return {
       layers: LAYERS,
-      marquee: ['YOUR BRAND. YOUR RECIPE.', 'NO TWO SCOOPS ARE THE SAME.', 'MONTA O TEU GELADO', "WE DON'T DO VANILLA."],
+      pillars: PILLARS,
+      steps: STEPS.map((s, i) => ({ ...s, delay: String(i * 90) })),
+      marquee: ['YOUR BRAND. YOUR RECIPE.', 'MONTA O TEU GELADO', "WE DON'T DO VANILLA."],
       faqs: FAQS.map((f, i) => {
         const open = !!this.state.faqOpen[i];
         return { ...f, toggle: () => this.toggleFaq(i), maxHeight: open ? '400px' : '0px', mark: open ? '−' : '+', bg: open ? '#F3E9D2' : 'transparent' };
