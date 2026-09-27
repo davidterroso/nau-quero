@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;1,400;1,500&family=League+Spartan:wght@300;400;500;600&family=Indie+Flower&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-Light.otf') format('opentype'); font-weight:300; font-style:normal; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-LightItalic.otf') format('opentype'); font-weight:300; font-style:italic; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-Regular.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-Italic.otf') format('opentype'); font-weight:400; font-style:italic; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-Bold.otf') format('opentype'); font-weight:500 700; font-style:normal; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+  @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-BoldItalic.otf') format('opentype'); font-weight:500 700; font-style:italic; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
+
+
+
+
+
+
+  body { margin:0; background:#F3E9D2; cursor:none; }
+  a { color:#690A20; }
+  a:hover { color:#391D01; }
+  @keyframes nqFloat { 0%,100% { transform:translateY(0) rotate(-3deg); } 50% { transform:translateY(-10px) rotate(-1.5deg); } }
+</style>
+<script src="./image-slot.js"></script>
+<script src="./ui-sound.js"></script>
+</helmet>
+<div style="font-family:'League Spartan',sans-serif; background:#F3E9D2; color:#391D01; overflow-x:hidden;">
+  <div style="position:fixed; inset:0; z-index:9998; pointer-events:none; opacity:0.07; background-image:url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%3E%3Cfilter%20id%3D%27n%27%20x%3D%270%27%20y%3D%270%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%272.6%27%20numOctaves%3D%272%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200.96%200%200%200%200%200.88%200%200%200%200%200.72%2012%200%200%200%20-7.4399999999999995%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27300%27%20height%3D%27300%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E&quot;), url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%3E%3Cfilter%20id%3D%27n%27%20x%3D%270%27%20y%3D%270%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%272.4%27%20numOctaves%3D%272%27%20seed%3D%2711%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200.08%200%200%200%200%200.03%200%200%200%200%200%2012%200%200%200%20-7.5600000000000005%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27300%27%20height%3D%27300%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E&quot;), url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%3E%3Cfilter%20id%3D%27n%27%20x%3D%270%27%20y%3D%270%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%273.5%27%20numOctaves%3D%272%27%20seed%3D%277%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200.9%200%200%200%200%200.78%200%200%200%200%200.58%208%200%200%200%20-4.8%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27300%27%20height%3D%27300%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E&quot;); background-size:300px 300px, 340px 340px, 260px 260px;"></div>
+  <div style="position:fixed; inset:0; z-index:9; pointer-events:none; opacity:0.35; mix-blend-mode:multiply; background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27180%27 height=%27180%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.85%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27180%27 height=%27180%27 filter=%27url(%23n)%27/%3E%3C/svg%3E'); background-size:180px 180px;"></div>
+
+  <header style="position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; padding:14px 5%; background:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28);">
+    <a href="./home.html" style="display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:#391D01;">
+      <img src="./images/nauquero-logo-brown.png" alt="NAU QUERO" style="height:22px; width:auto; display:block;" />
+    </a>
+    <nav style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+      <a href="./home.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Início</a>
+      <a href="./about.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Sobre</a>
+      <a href="./menu.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">O Menu</a>
+      <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; background:#690A20; color:#F3E9D2; box-shadow:0 0 0 2px #690A20, 0 0 22px 4px rgba(172,192,72,0.9); transform:scale(1.05); transition:transform .3s ease, box-shadow .35s ease;" style-hover="box-shadow:0 0 0 2px #690A20, 0 0 26px 5px rgba(172,192,72,1);">Projetos</a>
+      <a href="./build-your-own.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; background:#690A20; color:#F3E9D2; text-decoration:none; padding:14px 22px; border:2px solid #690A20; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; margin-left:6px; transition:transform .3s ease, background .3s ease, color .3s ease;" style-hover="transform:rotate(-0.7deg); background:#F3E9D2; color:#690A20;">Começar um projeto →</a>
+    </nav>
+  </header>
+
+  <section style="padding:clamp(56px,7vw,104px) 5% clamp(40px,4.5vw,64px); border-bottom:1px solid rgba(57,29,1,0.28);">
+    <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0 0 clamp(18px,2.4vw,28px);">Projetos</p>
+    <h1 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(33.8px,6.91vw,138.2px); line-height:0.86; letter-spacing:-0.04em; margin:0 0 clamp(20px,2.6vw,32px); max-width:22ch;">A few of my favourite <span style="font-style:italic; color:#690A20;">flavours.</span></h1>
+    <div style="display:flex; gap:clamp(18px,3vw,40px); align-items:center; flex-wrap:wrap;">
+      <p style="font-size:clamp(14px,1.55vw,17.2px); line-height:1.6; max-width:54ch; margin:0; flex:1 1 min(100%,300px);">Identidade, estratégia, presença digital e investigação científica. As imagens ficam identificadas como placeholders até chegarem as fotografias e mockups finais.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(34px,4vw,58px) 5%; border-bottom:1px solid rgba(57,29,1,0.28);">
+    <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0 0 clamp(18px,2vw,26px);">Escolhe uma camada</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:clamp(12px,1.4vw,18px);">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+        <button type="button" onClick="{{ f.select }}" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; text-align:left; background:{{ f.bg }}; color:{{ f.ink }}; border:1px solid rgba(57,29,1,0.28); border-radius:22px; padding:clamp(18px,1.8vw,24px); min-height:clamp(150px,13vw,190px); cursor:pointer; box-shadow:{{ f.shadow }}; transform:{{ f.lift }}; transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:translateY(-4px) rotate(-0.6deg);">
+          <span style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(21px,2vw,29px); line-height:1.02; letter-spacing:-0.02em;">{{ f.label }}</span>
+          <span style="font-size:13px; line-height:1.55; opacity:0.82;">{{ f.note }}</span>
+          <span style="margin-top:auto; display:inline-flex; align-items:center; gap:8px; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase;"><span>{{ f.cta }}</span><span style="transition:transform .3s ease; transform:{{ f.arrow }};">→</span><span style="opacity:0.55; letter-spacing:0.1em;">{{ f.count }}</span></span>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:clamp(34px,4vw,64px) 5% clamp(60px,7vw,110px);">
+    <sc-if value="{{ hasSelection }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex; flex-direction:column; border-top:1px solid rgba(57,29,1,0.28);">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
+          <article style="border-bottom:1px solid rgba(57,29,1,0.28);">
+            <button type="button" onClick="{{ p.toggle }}" style="display:flex; align-items:baseline; gap:clamp(12px,2vw,26px); width:100%; text-align:left; background:{{ p.rowBg }}; color:#391D01; border:0; padding:clamp(15px,1.7vw,22px) clamp(8px,1.2vw,16px); cursor:{{ p.cursor }}; flex-wrap:wrap; transition:background .3s ease, padding-left .3s ease;" style-hover="background:#F3E9D2; padding-left:24px;">
+              <span style="flex:0 0 auto; font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.18em; color:#690A20;">{{ p.index }}</span>
+              <span style="flex:1 1 min(100%,220px); font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(17px,1.9vw,26px); line-height:1.05; letter-spacing:-0.02em;">{{ p.name }}</span>
+              <span style="flex:0 1 auto; font-family:'League Spartan',sans-serif; font-size:12.5px; opacity:0.65;">{{ p.categoryLabel }}</span>
+              <span style="flex:0 0 auto; font-family:'League Spartan',sans-serif; font-size:12.5px; opacity:0.5;">{{ p.year }}</span>
+              <sc-if value="{{ p.hasDetail }}" hint-placeholder-val="{{ true }}">
+                <span style="flex:0 0 auto; font-size:14px; color:#690A20; transition:transform .35s ease; transform:{{ p.chev }};">↓</span>
+              </sc-if>
+            </button>
+        <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}">
+          <div style="border-top:1px solid rgba(57,29,1,0.28); padding:clamp(18px,2vw,28px) clamp(8px,1.2vw,16px) clamp(24px,2.4vw,32px); display:flex; gap:clamp(20px,3vw,44px); flex-wrap:wrap; background:#F3E9D2; color:#391D01;">
+            <div style="flex:1 1 min(100%,420px); min-width:0; display:flex; flex-direction:column; gap:14px;">
+              <p style="font-size:14px; line-height:1.65; margin:0; max-width:66ch;">{{ p.lead }}</p>
+              <sc-for list="{{ p.bullets }}" as="b" hint-placeholder-count="0">
+                <p style="font-size:13.5px; line-height:1.6; margin:0; max-width:66ch; padding-left:14px; border-left:2px solid #690A20;">{{ b }}</p>
+              </sc-for>
+              <div style="display:flex; gap:7px; flex-wrap:wrap;">
+                <sc-for list="{{ p.chips }}" as="ch" hint-placeholder-count="0">
+                  <span style="display:inline-flex; align-items:center; white-space:nowrap; font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.015em; border:1px solid rgba(57,29,1,0.28); border-radius:999px; padding:6px 11px;">{{ ch }}</span>
+                </sc-for>
+              </div>
+              <sc-if value="{{ p.hasDots }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+                  <sc-for list="{{ p.dots }}" as="dt" hint-placeholder-count="0">
+                    <span title="{{ dt.name }}" style="width:26px; height:26px; border-radius:8px; border:1px solid rgba(57,29,1,0.28); background:{{ dt.hex }};"></span>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ p.hasMeta }}" hint-placeholder-val="{{ false }}">
+                <p style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.05em; line-height:1.5; margin:0; opacity:0.6;">{{ p.meta }}</p>
+              </sc-if>
+            </div>
+            <sc-if value="{{ p.hasShots }}" hint-placeholder-val="{{ false }}">
+              <div style="flex:0 1 min(100%,340px); display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; align-content:start;">
+                <sc-for list="{{ p.shots }}" as="sl" hint-placeholder-count="0">
+                  <figure style="margin:0; border:1px solid rgba(57,29,1,0.28); border-radius:12px; overflow:hidden;">
+                    <div style="position:relative; aspect-ratio:4/3;">
+                      <image-slot id="{{ sl.id }}" shape="rect" placeholder="{{ sl.placeholder }}" style="position:absolute; inset:0;"></image-slot>
+                    </div>
+                  </figure>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+          </article>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{ noSelection }}" hint-placeholder-val="{{ false }}">
+      <p style="font-family:'League Spartan',sans-serif; font-size:clamp(14px,1.6vw,19px); line-height:1.6; margin:0; opacity:0.6; max-width:40ch;">Escolhe uma camada acima para ver os projetos.</p>
+    </sc-if>
+  </section>
+
+  <section style="padding:clamp(60px,8vw,120px) 5%; background:#F3E9D2; color:#391D01; text-align:center;">
+    <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(25.5px,4.96vw,92px); line-height:0.86; letter-spacing:-0.04em; margin:0 0 clamp(22px,3vw,34px);">Ready to order something <span style="font-style:italic; color:#690A20;">extra?</span></h2>
+    <a href="./build-your-own.html" style="display:inline-flex; align-items:center; background:#690A20; color:#F3E9D2; font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; padding:14px 22px; border:2px solid #690A20; border-radius:999px; white-space:nowrap; text-decoration:none; transition:transform .3s ease;" style-hover="transform:rotate(-0.7deg);">Vamos falar →</a>
+  </section>
+
+  <footer style="background:#391D01; color:#F3E9D2; padding:clamp(48px,6vw,84px) 5% 34px; border-top:1px solid rgba(243,233,210,0.25);">
+    <div style="display:flex; gap:clamp(28px,4vw,64px); flex-wrap:wrap; justify-content:space-between; align-items:flex-start; padding-bottom:40px; border-bottom:1px solid rgba(243,233,210,0.25);">
+      <div style="display:flex; gap:18px; align-items:flex-start;">
+        <div>
+          <img src="./images/nauquero-logo-brown.png" alt="NAU QUERO" style="height:26px; width:auto; display:block; margin:0 0 8px; filter:brightness(0) invert(1) sepia(0) saturate(0) brightness(2);" />
+          <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; margin:0; opacity:0.7;">Mariana Rodrigues · Vila do Conde</p>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="https://www.instagram.com/nauquero.mr/" target="_blank" rel="noopener" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#ACC048;">@nauquero.mr</a>
+        <a href="mailto:nauquero.mr@gmail.com" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#ACC048;">nauquero.mr@gmail.com</a>
+        <a href="https://www.linkedin.com/in/mariana-rodrigues-2108/" target="_blank" rel="noopener" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#ACC048;">LinkedIn</a>
+      </div>
+      <nav style="display:flex; flex-direction:column; gap:10px;">
+        <a href="./home.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Início</a>
+        <a href="./about.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Sobre</a>
+        <a href="./menu.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">O Menu</a>
+        <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Projetos</a>
+        <a href="./build-your-own.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Monta o teu gelado</a>
+      </nav>
+      <nav style="display:flex; flex-direction:column; gap:10px;">
+        <a href="./menu.html#faq" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Perguntas frequentes</a>
+      </nav>
+    </div>
+    <div style="padding-top:28px; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; align-items:center;">
+      <p style="font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(15.6px,1.87vw,23.4px); margin:0; color:#F3E9D2;">It<span style="font-family:'Petrona',Georgia,serif;">’</span>s okay to like extraordinary.</p>
+      <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; margin:0; opacity:0.55;">© 2026 NAU QUERO</p>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: null, open: {}, data: null };
+
+  componentDidMount() {
+    import('./work-data.js').then(m => { this._d = m; this.setState({ data: true }); });
+    import('./dot-cursor.js').then(m => { this._dot = m.initDotCursor(); });
+    import('./reveal.js').then(m => { this._destroy = m.initReveal(document); });
+  }
+  componentWillUnmount() { if (this._destroy) this._destroy(); if (this._dot) this._dot(); }
+
+  selectFilter(k) { this.setState({ active: k }); }
+  toggle(name) { this.setState(s => ({ open: { ...s.open, [name]: !s.open[name] } })); }
+
+  matches(p, key) {
+    if (key === 'todos') return true;
+    if (p.category === key) return true;
+    return (p.extraCategories || []).indexOf(key) >= 0;
+  }
+
+  renderVals() {
+    const d = this._d;
+    if (!d) return { filters: [], projects: [], hasSelection: false, noSelection: true };
+    const active = this.state.active;
+    const list = active ? d.PROJECTS.filter(p => this.matches(p, active)) : [];
+    return {
+      hasSelection: !!active,
+      noSelection: !active,
+      filters: d.FILTERS.map(f => {
+        const on = active === f.key;
+        return {
+          label: f.label,
+          note: f.note,
+          count: String(d.PROJECTS.filter(p => this.matches(p, f.key)).length),
+          select: () => this.selectFilter(f.key),
+          bg: f.bg,
+          ink: f.ink,
+          cta: on ? 'A ver os projetos' : 'Ver os projetos',
+          arrow: on ? 'rotate(90deg)' : 'rotate(0deg)',
+          shadow: on ? '0 0 0 3px #391D01' : '0 6px 0 0 rgba(57,29,1,0.14)',
+          lift: on ? 'translateY(-4px)' : 'none',
+        };
+      }),
+      projects: list.map((p, i) => {
+        const s = d.buildSummary(p);
+        const hasDetail = !!(s.lead || s.bullets.length || s.chips.length || s.dots.length || s.shots.length);
+        const open = !!this.state.open[p.name] && hasDetail;
+        return {
+          name: p.name, brand: p.brand, year: p.year, tags: p.tags || [],
+          categoryLabel: p.categoryLabel,
+          index: String(i + 1).padStart(2, '0'),
+          lead: s.lead, bullets: s.bullets, chips: s.chips, dots: s.dots, shots: s.shots, meta: s.meta,
+          hasDots: s.dots.length > 0, hasShots: s.shots.length > 0, hasMeta: !!s.meta,
+          hasDetail,
+          open,
+          toggle: hasDetail ? (() => this.toggle(p.name)) : (() => {}),
+          cursor: hasDetail ? 'pointer' : 'default',
+          chev: open ? 'rotate(180deg)' : 'rotate(0deg)',
+          rowBg: open ? '#ACC048' : 'transparent',
+        };
+      }),
+    };
+  }
+}
+</script>
+</body>
+</html>
