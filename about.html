@@ -248,10 +248,10 @@
     <div style="position:relative; overflow:hidden; margin:0 -5%; padding:4px 0 2px;">
       <div style="display:flex; gap:16px; width:max-content; transition:transform .5s cubic-bezier(.4,0,.2,1); transform:{{ skillsShift }};">
         <sc-for list="{{ skills }}" as="sk" hint-placeholder-count="8">
-          <div style="position:relative; overflow:hidden; flex:0 0 auto; width:280px; min-height:110px; background:{{ sk.bg }}; border:1px solid rgba(57,29,1,0.2); border-radius:16px; padding:20px; display:flex; flex-direction:column; justify-content:space-between; gap:12px; opacity:{{ sk.op }}; transform:{{ sk.scale }}; box-shadow:{{ sk.shadow }}; transition:opacity .5s ease, transform .5s cubic-bezier(.4,0,.2,1), background .5s ease, box-shadow .5s ease;">
-            <span style="position:absolute; bottom:-10px; right:8px; font-family:'Petrona',Georgia,serif; font-style:italic; font-size:44.2px; line-height:1; color:#690A20; opacity:0.13;">{{ sk.num }}</span>
-            <p style="position:relative; font-family:'Poppins',sans-serif; font-size:12.8px; line-height:1.3; margin:0; color:#391D01;">{{ sk.label }}</p>
-            <div style="position:relative; display:flex; gap:6px; flex-wrap:wrap; padding-right:52px;">
+          <div style="position:relative; overflow:visible; flex:0 0 auto; width:280px; min-height:150px; height:auto; background:{{ sk.bg }}; border:1px solid rgba(57,29,1,0.2); border-radius:16px; padding:18px; display:flex; flex-direction:column; justify-content:space-between; gap:12px; opacity:{{ sk.op }}; transform:{{ sk.scale }}; box-shadow:{{ sk.shadow }}; transition:opacity .5s ease, transform .5s cubic-bezier(.4,0,.2,1), background .5s ease, box-shadow .5s ease;">
+            <span style="position:absolute; bottom:-8px; right:8px; font-family:'Petrona',Georgia,serif; font-style:italic; font-size:44.2px; line-height:1; color:#690A20; opacity:0.13; pointer-events:none; z-index:0;">{{ sk.num }}</span>
+            <p style="position:relative; font-family:'Poppins',sans-serif; font-size:12.8px; line-height:1.35; margin:0; color:#391D01; z-index:1;">{{ sk.label }}</p>
+            <div style="position:relative; display:flex; gap:6px; flex-wrap:wrap; padding-right:44px; z-index:1;">
               <sc-for list="{{ sk.tools }}" as="tl" hint-placeholder-count="2">
                 <span style="font-family:'Poppins',sans-serif; font-size:10px; letter-spacing:0.04em; color:#391D01; background:#F3E9D2; border:1px solid rgba(57,29,1,0.22); border-radius:999px; padding:3px 9px;">{{ tl }}</span>
               </sc-for>
