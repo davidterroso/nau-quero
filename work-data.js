@@ -92,6 +92,7 @@ export const PROJECTS = [
   {
     name: 'Raízes Frescas', brand: 'Raízes Frescas — Mercearia Biológica', year: '2026',
     category: 'identidade', categoryLabel: 'Identidade de Marca',
+    photo: './images/raizes-frescas-hero.png',
     tags: ['Brand Guidelines', 'Produtos Biológicos'],
     desc: 'Identidade visual e presença digital para a Raízes Frescas, mercearia biológica de proximidade — uma marca fresca, natural e de confiança, com um sistema visual construído à volta da terra, das raízes e do que é cultivado com cuidado.',
     identity: {
