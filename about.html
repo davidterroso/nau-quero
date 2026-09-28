@@ -99,30 +99,28 @@
         <img src="./images/kid-icecream-sticker.png" alt="" style="width:clamp(120px,14vw,200px); height:auto; display:block; transform:rotate(7deg); filter:drop-shadow(0 10px 18px rgba(57,29,1,0.25));" />
       </div>
     </div>
-    <div style="display:flex; gap:clamp(28px,4vw,64px); flex-wrap:wrap; align-items:flex-start; position:relative;">
-      <div data-reveal style="position:relative; flex:1 1 min(100%,560px); min-width:0; max-width:680px;">
-        <div style="position:absolute; left:21px; top:8px; bottom:8px; width:2px; background:linear-gradient(180deg, #690A20, rgba(105,10,32,0.08));"></div>
-        <div style="display:flex; flex-direction:column; gap:clamp(30px,3.6vw,44px);">
-          <div style="position:relative; padding-left:clamp(54px,6vw,68px);">
-            <span style="position:absolute; left:0; top:0; width:44px; height:44px; border-radius:50%; background:#690A20; color:#F3E9D2; display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.03em; box-shadow:0 0 0 5px #F3D9BC; transition:transform .3s ease;" style-hover="transform:scale(1.1) rotate(-8deg);">01</span>
-            <p style="font-size:clamp(15px,1.6vw,18.5px); line-height:1.7; margin:0;">Porque a primeira vez que percebi o que era uma marca foi a olhar para um gelado. Quando era criança, eu não queria qualquer gelado: queria os da Magnum. Só e sempre — Magnum.</p>
-          </div>
-          <div style="position:relative; padding-left:clamp(54px,6vw,68px);">
-            <span style="position:absolute; left:0; top:0; width:44px; height:44px; border-radius:50%; background:#ACC048; color:#391D01; display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.03em; box-shadow:0 0 0 5px #F3D9BC; transition:transform .3s ease;" style-hover="transform:scale(1.1) rotate(-8deg);">02</span>
-            <p style="font-size:clamp(15px,1.6vw,18.5px); line-height:1.7; margin:0;">Anos mais tarde, entrei numa gelataria Magnum em Itália e percebi que aquilo que, outrora, começou num gelado, estava a ir muito mais além. A montra, o balcão, o cuidado em cada camada — ficou claro que ninguém ali vendia apenas gelado: vendia-se a experiência de escolher, literalmente, cada camada, até à mais profunda ou à que fica à tona.</p>
-          </div>
-          <div style="position:relative; padding-left:clamp(54px,6vw,68px);">
-            <span style="position:absolute; left:0; top:0; width:44px; height:44px; border-radius:50%; background:#391D01; color:#F3E9D2; display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.03em; box-shadow:0 0 0 5px #F3D9BC; transition:transform .3s ease;" style-hover="transform:scale(1.1) rotate(-8deg);">03</span>
-            <p style="font-size:clamp(15px,1.6vw,18.5px); line-height:1.7; margin:0;">Uma gelataria não serve o mesmo a todos. Pergunta, sugere, monta camada a camada e entrega algo que só faz sentido para quem o pediu. Foi aí que percebi que uma marca é muito mais do que aquilo que vende — é a experiência que constrói à volta do produto.</p>
-          </div>
-          <div style="position:relative; padding-left:clamp(54px,6vw,68px);">
-            <span style="position:absolute; left:0; top:0; width:44px; height:44px; border-radius:50%; background:#F5C232; color:#391D01; display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.03em; box-shadow:0 0 0 5px #F3D9BC; transition:transform .3s ease;" style-hover="transform:scale(1.1) rotate(-8deg);">04</span>
-            <p style="font-size:clamp(15px,1.6vw,18.5px); line-height:1.7; margin:0;">E é exactamente assim que, depois de tantos anos a admirar marcas que se preocupam em surpreender quem está do outro lado, trabalho marcas.</p>
+    <div data-reveal style="position:relative;">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:clamp(22px,2.8vw,32px);">
+        <sc-for list="{{ why }}" as="w" hint-placeholder-count="4">
+          <button type="button" onClick="{{ w.select }}" style="display:inline-flex; align-items:center; gap:9px; background:{{ w.bg }}; color:#F3E9D2; border:1px solid rgba(57,29,1,0.15); border-radius:999px; padding:12px 18px; font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.02em; cursor:pointer; box-shadow:{{ w.shadow }}; transform:{{ w.lift }}; transition:transform .3s ease, box-shadow .35s ease, background .3s ease;" style-hover="transform:translateY(-3px);">
+            <span style="font-size:11px; opacity:0.65; letter-spacing:0.15em;">{{ w.num }}</span>
+            <span>{{ w.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <div style="display:flex; gap:clamp(24px,3.5vw,48px); flex-wrap:wrap; align-items:stretch;">
+        <div style="flex:1 1 min(100%,520px); min-width:0; background:#391D01; color:#F3E9D2; border-radius:24px; padding:clamp(30px,3.4vw,46px); position:relative; overflow:hidden; min-height:200px; box-shadow:0 18px 40px -20px rgba(57,29,1,0.5);">
+          <span style="position:absolute; top:14px; right:22px; font-family:'Petrona',Georgia,serif; font-style:italic; font-size:clamp(60px,7vw,96px); line-height:1; color:#F3E9D2; opacity:0.1;">{{ whyActiveNum }}</span>
+          <p style="position:relative; font-size:clamp(16px,1.8vw,20px); line-height:1.75; margin:0 0 clamp(22px,2.6vw,30px); max-width:56ch;">{{ whyActiveText }}</p>
+          <div style="position:relative; display:flex; align-items:center; gap:10px;">
+            <button type="button" onClick="{{ whyPrev }}" aria-label="Anterior" style="width:38px; height:38px; border-radius:50%; border:1px solid rgba(243,233,210,0.3); background:transparent; color:#F3E9D2; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center; transition:background .25s ease, transform .25s ease;" style-hover="background:#ACC048; color:#391D01; transform:scale(1.08);">←</button>
+            <span style="font-family:'Poppins',sans-serif; font-size:12px; letter-spacing:0.1em; opacity:0.7; min-width:56px; text-align:center;">{{ whyCount }}</span>
+            <button type="button" onClick="{{ whyNext }}" aria-label="Seguinte" style="width:38px; height:38px; border-radius:50%; border:1px solid rgba(243,233,210,0.3); background:transparent; color:#F3E9D2; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center; transition:background .25s ease, transform .25s ease;" style-hover="background:#ACC048; color:#391D01; transform:scale(1.08);">→</button>
           </div>
         </div>
-      </div>
-      <div data-reveal data-reveal-delay="150" style="flex:0 1 260px; min-width:min(100%,220px); align-self:center; position:relative;">
-        <p style="position:relative; background:#391D01; color:#F3E9D2; border-radius:20px; padding:clamp(24px,2.6vw,34px); transform:rotate(-1.4deg); box-shadow:0 18px 34px -16px rgba(57,29,1,0.5); font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(19px,2vw,25px); line-height:1.3; margin:0; transition:transform .35s ease;" style-hover="transform:rotate(0deg) translateY(-4px);">It<span style="font-family:'Petrona',Georgia,serif;">’</span>s okay to like <span style="color:#ACC048;">extraordinary.</span></p>
+        <div style="flex:0 1 240px; min-width:min(100%,220px); align-self:center; position:relative;">
+          <p style="position:relative; background:#690A20; color:#F3E9D2; border-radius:20px; padding:clamp(24px,2.6vw,34px); transform:rotate(-1.4deg); box-shadow:0 18px 34px -16px rgba(57,29,1,0.5); font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(19px,2vw,25px); line-height:1.3; margin:0; transition:transform .35s ease;" style-hover="transform:rotate(0deg) translateY(-4px);">It<span style="font-family:'Petrona',Georgia,serif;">’</span>s okay to like <span style="color:#ACC048;">extraordinary.</span></p>
+        </div>
       </div>
     </div>
   </section>
@@ -340,6 +338,17 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
+const WHY_ICE_CREAM = [
+  { num: '01', label: 'A infância',
+    text: 'Porque a primeira vez que percebi o que era uma marca foi a olhar para um gelado. Quando era criança, eu não queria qualquer gelado: queria os da Magnum. Só e sempre — Magnum.' },
+  { num: '02', label: 'Itália',
+    text: 'Anos mais tarde, entrei numa gelataria Magnum em Itália e percebi que aquilo que, outrora, começou num gelado, estava a ir muito mais além. A montra, o balcão, o cuidado em cada camada — ficou claro que ninguém ali vendia apenas gelado: vendia-se a experiência de escolher, literalmente, cada camada, até à mais profunda ou à que fica à tona.' },
+  { num: '03', label: 'A gelataria',
+    text: 'Uma gelataria não serve o mesmo a todos. Pergunta, sugere, monta camada a camada e entrega algo que só faz sentido para quem o pediu. Foi aí que percebi que uma marca é muito mais do que aquilo que vende — é a experiência que constrói à volta do produto.' },
+  { num: '04', label: 'A marca',
+    text: 'E é exactamente assim que, depois de tantos anos a admirar marcas que se preocupam em surpreender quem está do outro lado, trabalho marcas.' },
+];
+
 const STORY = [
   { num: '01', title: 'A criança que não queria o genérico', bg: '#391D01', ink: '#F3E9D2',
     text: 'Desde pequena que "não quero" era a minha frase preferida. Cresci em Vila do Conde, cidade de naus, e foi daí que nasceu a Nau Quero: um projeto onde desafio as regras e elevo o intelecto das marcas.' },
@@ -400,7 +409,7 @@ const FACTS = [
 const FACT_ROT = ['-1.2deg', '1deg', '-0.8deg', '1.2deg', '-1.5deg', '0.8deg', '-1deg', '1.4deg'];
 
 class Component extends DCLogic {
-  state = { credOpen: null, skillAt: 0, factAt: 0 };
+  state = { credOpen: null, skillAt: 0, factAt: 0, whyAt: 0 };
 
   speak(l) {
     const synth = window.speechSynthesis;
@@ -422,6 +431,18 @@ class Component extends DCLogic {
   componentWillUnmount() { if (this._destroy) this._destroy(); if (this._dot) this._dot(); }
   renderVals() {
     return {
+      why: WHY_ICE_CREAM.map((w, i) => {
+        const active = i === this.state.whyAt;
+        return { ...w, bg: active ? '#690A20' : '#391D01',
+          shadow: active ? '0 0 0 3px #F3D9BC, 0 0 20px 4px rgba(105,10,32,0.5)' : 'none',
+          lift: active ? 'translateY(-3px)' : 'none',
+          select: () => this.setState({ whyAt: i }) };
+      }),
+      whyActiveText: WHY_ICE_CREAM[this.state.whyAt].text,
+      whyActiveNum: WHY_ICE_CREAM[this.state.whyAt].num,
+      whyCount: String(this.state.whyAt + 1).padStart(2, '0') + ' / ' + String(WHY_ICE_CREAM.length).padStart(2, '0'),
+      whyPrev: () => this.setState(st => ({ whyAt: (st.whyAt - 1 + WHY_ICE_CREAM.length) % WHY_ICE_CREAM.length })),
+      whyNext: () => this.setState(st => ({ whyAt: (st.whyAt + 1) % WHY_ICE_CREAM.length })),
       story: STORY.map((s, i) => ({ ...s, delay: String(i * 50) })),
       credentials: CREDENTIALS.map((c, i) => {
         const open = this.state.credOpen === i;
