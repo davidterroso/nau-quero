@@ -194,14 +194,8 @@
       <div style="order:4; grid-column:1 / -1; display:flex; flex-direction:column; gap:12px;">
         <p style="font-family:'Indie Flower',cursive; font-size:12.8px; letter-spacing:0.01em; color:#690A20; margin:0; text-align:center; display:{{ stepLabelDisplay }};">3º passo · Envia o pedido</p>
 
-        <div style="display:{{ summaryDisplay }}; flex-direction:column; gap:14px; border:1px solid #391D01; border-radius:16px; background:#F3E9D2; color:#391D01; padding:22px 24px;">
-          <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(16.1px,1.7vw,20.4px); margin:0;">O teu resumo</h3>
-          <p style="font-family:'Poppins',sans-serif; font-size:11.5px; line-height:1.7; margin:0; white-space:pre-line;">{{ summaryText }}</p>
-          <p style="font-family:'Indie Flower',cursive; font-size:12.8px; letter-spacing:0.01em; margin:0; color:#690A20;">Agora, é só clicares no "Enviar e-mail".</p>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <button type="button" onClick="{{ sendEmail }}" style="flex:1 1 auto; box-sizing:border-box; background:#690A20; color:#F3E9D2; font-family:'Poppins',sans-serif; font-size:11.9px; letter-spacing:0.015em; padding:16px 22px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.4deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">Enviar e-mail →</button>
-            <button type="button" onClick="{{ editSummary }}" style="background:transparent; color:#391D01; font-family:'Poppins',sans-serif; font-size:11.5px; letter-spacing:0.015em; padding:16px 18px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer;">← Corrigir dados</button>
-          </div>
+        <div style="display:{{ errorDisplay }}; align-items:center; gap:10px; border:1px solid #690A20; border-radius:16px; background:#F3E9D2; color:#690A20; padding:16px 22px; text-align:center; flex-direction:column;">
+          <p style="font-family:'Poppins',sans-serif; font-size:11.5px; line-height:1.6; margin:0;">Não foi possível enviar o pedido. Tenta novamente ou escreve para <strong>nauquero.mr@gmail.com</strong>.</p>
         </div>
 
         <div style="display:{{ successDisplay }}; align-items:center; gap:14px; border:1px solid #391D01; border-radius:16px; background:#ACC048; color:#391D01; padding:18px 22px; text-align:center; flex-direction:column;">
@@ -209,7 +203,7 @@
           <p style="font-family:'Poppins',sans-serif; font-size:11.5px; line-height:1.6; margin:0;">Vais receber uma resposta em <strong>nauquero.mr@gmail.com</strong> dentro de 48 horas.</p>
         </div>
 
-        <button type="button" onClick="{{ triggerSubmit }}" style="display:{{ buttonDisplay }}; width:100%; box-sizing:border-box; background:#690A20; color:#F3E9D2; font-family:'Poppins',sans-serif; font-size:11.9px; letter-spacing:0.015em; padding:18px 24px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.4deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">Enviar pedido →</button>
+        <button type="button" onClick="{{ triggerSubmit }}" style="display:{{ buttonDisplay }}; width:100%; box-sizing:border-box; background:#690A20; color:#F3E9D2; font-family:'Poppins',sans-serif; font-size:11.9px; letter-spacing:0.015em; padding:18px 24px; border:1px solid rgba(57,29,1,0.28); border-radius:999px; cursor:pointer; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.4deg); box-shadow:0 0 24px 3px rgba(105,10,32,0.75);">{{ submitLabel }}</button>
       </div>
     </div>
   </section>
@@ -272,10 +266,10 @@ const GROUPS = [
   { num: '03', layer: 'Topping', title: 'Redes Sociais & Conteúdo', hint: 'É aqui que se nota.', bg: '#391D01', ink: '#F3E9D2', accent: '#F5C232', glowRgb: '245,194,50', key: 'toppings' },
 ];
 
-const PEDIDO_EMAIL = 'nauquero.mr@gmail.com';
+const WEB3FORMS_KEY = 'c74b0157-3540-4564-8bff-f552c0451f4d';
 
 class Component extends DCLogic {
-  state = { cone: [], base: [], toppings: [], unsure: false, step: 'form', summary: null };
+  state = { cone: [], base: [], toppings: [], unsure: false, step: 'form' };
 
   componentDidMount() {
     try {
@@ -305,41 +299,38 @@ class Component extends DCLogic {
   };
   formRef = (el) => { this._form = el; };
   triggerSubmit = () => {
+    if (this.state.step === 'sending') return;
     const form = this._form || document.getElementById('pedido-form');
     if (!form) return;
     if (form.reportValidity && !form.reportValidity()) return;
     this.save();
     const data = new FormData(form);
-    const summary = {
-      nome: (data.get('nome') || '').toString().trim(),
-      email: (data.get('email') || '').toString().trim(),
-      marca: (data.get('marca') || '').toString().trim(),
-      website: (data.get('website') || '').toString().trim(),
-      mensagem: (data.get('mensagem') || '').toString().trim(),
-    };
-    this.setState({ step: 'summary', summary });
+    const nome = (data.get('nome') || '').toString().trim();
+    const email = (data.get('email') || '').toString().trim();
+    const marca = (data.get('marca') || '').toString().trim();
+    const website = (data.get('website') || '').toString().trim();
+    const mensagem = (data.get('mensagem') || '').toString().trim();
+    const receita = this.recipeName();
+    this.setState({ step: 'sending' });
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: 'Novo pedido — Nau Quero (' + receita + ')',
+        from_name: nome || 'Site Nau Quero',
+        email: email,
+        nome: nome,
+        marca: marca,
+        website: website,
+        mensagem: mensagem,
+        receita: receita,
+      }),
+    }).then(r => r.json()).then(json => {
+      this.setState({ step: (json && json.success) ? 'sent' : 'error' });
+    }).catch(() => { this.setState({ step: 'error' }); });
   };
-  editSummary = () => { this.setState({ step: 'form' }); };
   onFormSubmit = (e) => { e.preventDefault(); this.triggerSubmit(); };
-  sendEmail = () => {
-    const s = this.state.summary;
-    if (!s) return;
-    const subject = 'Novo pedido — Nau Quero (' + this.recipeName() + ')';
-    const body = this.summaryText(s);
-    window.location.href = 'mailto:' + PEDIDO_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    this.setState({ step: 'sent' });
-  };
-  summaryText(s) {
-    const lines = [
-      'Nome: ' + s.nome,
-      'Email: ' + s.email,
-    ];
-    if (s.marca) lines.push('Marca: ' + s.marca);
-    if (s.website) lines.push('Website/Instagram: ' + s.website);
-    lines.push('Receita: ' + this.recipeName());
-    if (s.mensagem) lines.push('', 'Mensagem:', s.mensagem);
-    return lines.join('\n');
-  }
 
   recipeName() {
     if (this.state.unsure) return 'Ainda por escolher — vamos descobrir juntas';
@@ -423,12 +414,10 @@ class Component extends DCLogic {
       formRef: this.formRef,
       triggerSubmit: this.triggerSubmit,
       onFormSubmit: this.onFormSubmit,
-      sendEmail: this.sendEmail,
-      editSummary: this.editSummary,
-      summaryText: this.state.summary ? this.summaryText(this.state.summary) : '',
-      stepLabelDisplay: this.state.step === 'form' ? 'block' : 'none',
-      buttonDisplay: this.state.step === 'form' ? 'block' : 'none',
-      summaryDisplay: this.state.step === 'summary' ? 'flex' : 'none',
+      submitLabel: this.state.step === 'sending' ? 'A enviar…' : (this.state.step === 'error' ? 'Tentar novamente →' : 'Enviar pedido →'),
+      stepLabelDisplay: this.state.step === 'sent' ? 'none' : 'block',
+      buttonDisplay: this.state.step === 'sent' ? 'none' : 'block',
+      errorDisplay: this.state.step === 'error' ? 'flex' : 'none',
       successDisplay: this.state.step === 'sent' ? 'flex' : 'none',
     };
   }
