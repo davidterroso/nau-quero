@@ -115,13 +115,13 @@
       <div style="display:flex; flex-direction:column; border-top:1px solid rgba(57,29,1,0.28);">
         <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
           <article style="border-bottom:1px solid rgba(57,29,1,0.28);">
-            <button type="button" onClick="{{ p.toggle }}" style="display:flex; align-items:baseline; gap:clamp(12px,2vw,26px); width:100%; text-align:left; background:{{ p.rowBg }}; color:#391D01; border:0; padding:clamp(15px,1.7vw,22px) clamp(8px,1.2vw,16px); cursor:{{ p.cursor }}; flex-wrap:wrap; transition:background .3s ease, padding-left .3s ease;" style-hover="background:#F3E9D2; padding-left:24px;">
-              <span style="flex:0 0 auto; font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.18em; color:#690A20;">{{ p.index }}</span>
+            <button type="button" onClick="{{ p.toggle }}" style="display:flex; align-items:baseline; gap:clamp(12px,2vw,26px); width:100%; text-align:left; background:{{ p.rowBg }}; color:{{ p.rowInk }}; border:0; padding:clamp(15px,1.7vw,22px) clamp(8px,1.2vw,16px); cursor:{{ p.cursor }}; flex-wrap:wrap; transition:background .3s ease, padding-left .3s ease, color .3s ease;" style-hover="background:#F3E9D2; color:#391D01; padding-left:24px;">
+              <span style="flex:0 0 auto; font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.18em; color:{{ p.rowInk }}; opacity:0.75;">{{ p.index }}</span>
               <span style="flex:1 1 min(100%,220px); font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(17px,1.9vw,26px); line-height:1.05; letter-spacing:-0.02em;">{{ p.name }}</span>
               <span style="flex:0 1 auto; font-family:'League Spartan',sans-serif; font-size:12.5px; opacity:0.65;">{{ p.categoryLabel }}</span>
               <span style="flex:0 0 auto; font-family:'League Spartan',sans-serif; font-size:12.5px; opacity:0.5;">{{ p.year }}</span>
               <sc-if value="{{ p.hasDetail }}" hint-placeholder-val="{{ true }}">
-                <span style="flex:0 0 auto; font-size:14px; color:#690A20; transition:transform .35s ease; transform:{{ p.chev }};">↓</span>
+                <span style="flex:0 0 auto; font-size:14px; color:{{ p.rowInk }}; transition:transform .35s ease; transform:{{ p.chev }};">↓</span>
               </sc-if>
             </button>
         <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}">
@@ -129,7 +129,7 @@
             <div style="width:100%; min-width:0; column-count:2; column-gap:clamp(24px,3vw,44px); orphans:3; widows:3;">
               <p style="font-size:14px; line-height:1.65; margin:0 0 14px; break-inside:avoid;">{{ p.lead }}</p>
               <sc-for list="{{ p.bullets }}" as="b" hint-placeholder-count="0">
-                <p style="font-size:13.5px; line-height:1.6; margin:0 0 14px; padding-left:14px; border-left:2px solid #690A20; break-inside:avoid;">{{ b }}</p>
+                <p style="font-size:13.5px; line-height:1.6; margin:0 0 14px; padding-left:14px; border-left:2px solid {{ p.accent }}; break-inside:avoid;">{{ b }}</p>
               </sc-for>
               <div style="display:flex; gap:7px; flex-wrap:wrap; margin:0 0 14px; break-inside:avoid;">
                 <sc-for list="{{ p.chips }}" as="ch" hint-placeholder-count="0">
@@ -267,7 +267,9 @@ class Component extends DCLogic {
           toggle: hasDetail ? (() => this.toggle(p.name)) : (() => {}),
           cursor: hasDetail ? 'pointer' : 'default',
           chev: open ? 'rotate(180deg)' : 'rotate(0deg)',
-          rowBg: open ? '#ACC048' : 'transparent',
+          accent: d.CAT_ACCENT[active] || '#ACC048',
+          rowBg: open ? (d.CAT_ACCENT[active] || '#ACC048') : 'transparent',
+          rowInk: open && active === 'investigacao' ? '#F3E9D2' : '#391D01',
         };
       }),
     };
