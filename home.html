@@ -163,7 +163,7 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:clamp(14px,1.6vw,20px); align-items:start;">
       <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="3">
         <a data-reveal href="./work.html" style="display:flex; flex-direction:column; gap:10px; text-decoration:none; color:#391D01; transition:transform .3s ease;" style-hover="transform:translateY(-5px) scale(1.02);">
-          <div style="position:relative; aspect-ratio:16/10; border:1px solid rgba(57,29,1,0.22); border-radius:12px; overflow:hidden; background:{{ pr.bg }}; box-shadow:{{ pr.glow }}; transition:box-shadow .35s ease;">
+          <div style="position:relative; aspect-ratio:4/5; border:1px solid rgba(57,29,1,0.22); border-radius:12px; overflow:hidden; background:{{ pr.bg }}; box-shadow:{{ pr.glow }}; transition:box-shadow .35s ease;">
             <image-slot id="{{ pr.slot }}" shape="rect" placeholder="{{ pr.ph }}" src="{{ pr.photoSrc }}" style="position:absolute; inset:0;"></image-slot>
           </div>
           <div style="display:flex; flex-direction:column; gap:3px;">

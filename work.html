@@ -125,32 +125,32 @@
               </sc-if>
             </button>
         <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}">
-          <div style="animation:nqReveal .35s ease; border-top:1px solid rgba(57,29,1,0.28); padding:clamp(18px,2vw,28px) clamp(8px,1.2vw,16px) clamp(24px,2.4vw,32px); display:flex; gap:clamp(20px,3vw,44px); flex-wrap:wrap; background:#F3E9D2; color:#391D01;">
-            <div style="flex:1 1 min(100%,420px); min-width:0; display:flex; flex-direction:column; gap:14px;">
-              <p style="font-size:14px; line-height:1.65; margin:0; max-width:66ch;">{{ p.lead }}</p>
+          <div style="animation:nqReveal .35s ease; border-top:1px solid rgba(57,29,1,0.28); padding:clamp(18px,2vw,28px) clamp(8px,1.2vw,16px) clamp(24px,2.4vw,32px); display:flex; flex-direction:column; gap:clamp(18px,2.4vw,28px); background:#F3E9D2; color:#391D01;">
+            <div style="width:100%; min-width:0; column-count:2; column-gap:clamp(24px,3vw,44px); orphans:3; widows:3;">
+              <p style="font-size:14px; line-height:1.65; margin:0 0 14px; break-inside:avoid;">{{ p.lead }}</p>
               <sc-for list="{{ p.bullets }}" as="b" hint-placeholder-count="0">
-                <p style="font-size:13.5px; line-height:1.6; margin:0; max-width:66ch; padding-left:14px; border-left:2px solid #690A20;">{{ b }}</p>
+                <p style="font-size:13.5px; line-height:1.6; margin:0 0 14px; padding-left:14px; border-left:2px solid #690A20; break-inside:avoid;">{{ b }}</p>
               </sc-for>
-              <div style="display:flex; gap:7px; flex-wrap:wrap;">
+              <div style="display:flex; gap:7px; flex-wrap:wrap; margin:0 0 14px; break-inside:avoid;">
                 <sc-for list="{{ p.chips }}" as="ch" hint-placeholder-count="0">
                   <span style="display:inline-flex; align-items:center; white-space:nowrap; font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.015em; border:1px solid rgba(57,29,1,0.28); border-radius:999px; padding:6px 11px; transition:transform .25s ease, background .25s ease;" style-hover="transform:translateY(-2px); background:#F3E9D2;">{{ ch }}</span>
                 </sc-for>
               </div>
               <sc-if value="{{ p.hasDots }}" hint-placeholder-val="{{ false }}">
-                <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+                <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:0 0 14px; break-inside:avoid;">
                   <sc-for list="{{ p.dots }}" as="dt" hint-placeholder-count="0">
                     <span title="{{ dt.name }}" style="width:26px; height:26px; border-radius:8px; border:1px solid rgba(57,29,1,0.28); background:{{ dt.hex }};"></span>
                   </sc-for>
                 </div>
               </sc-if>
               <sc-if value="{{ p.hasMeta }}" hint-placeholder-val="{{ false }}">
-                <p style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.05em; line-height:1.5; margin:0; opacity:0.6;">{{ p.meta }}</p>
+                <p style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.05em; line-height:1.5; margin:0; opacity:0.6; break-inside:avoid;">{{ p.meta }}</p>
               </sc-if>
             </div>
             <sc-if value="{{ p.hasShots }}" hint-placeholder-val="{{ false }}">
-              <div style="flex:1 1 min(100%,620px); display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; align-content:start;">
+              <div style="display:flex; gap:14px; width:100%;">
                 <sc-for list="{{ p.shots }}" as="sl" hint-placeholder-count="0">
-                  <figure style="margin:0; border:1px solid rgba(57,29,1,0.28); border-radius:12px; overflow:hidden;">
+                  <figure style="margin:0; flex:1 1 0; min-width:0; border:1px solid rgba(57,29,1,0.28); border-radius:12px; overflow:hidden;">
                     <div style="position:relative; aspect-ratio:4/3;">
                       <image-slot id="{{ sl.id }}" shape="rect" placeholder="{{ sl.placeholder }}" src="{{ sl.src }}" style="position:absolute; inset:0;"></image-slot>
                     </div>
