@@ -126,9 +126,9 @@ export const PROJECTS = [
         scenario: 'Produtos e espaços reais — a montra, as caixas de madeira, as mãos de quem atende — com texturas naturais e imperfeições que dão confiança.',
       },
       mockups: [
-        { id: 'rf-mockup-sacos', label: 'Sacos & Embalagem', placeholder: 'Mockup — sacos e embalagem' },
-        { id: 'rf-mockup-montra', label: 'Montra & Sinalética', placeholder: 'Mockup — montra e sinalética' },
-        { id: 'rf-mockup-social', label: 'Redes Sociais', placeholder: 'Mockup — redes sociais' },
+        { id: 'rf-mockup-sacos', label: 'Sacos & Embalagem', placeholder: 'Mockup — sacos e embalagem', src: './images/raizes-frescas-embalagem.png' },
+        { id: 'rf-mockup-montra', label: 'Montra & Sinalética', placeholder: 'Mockup — montra e sinalética', src: './images/raizes-frescas-cartao.png' },
+        { id: 'rf-mockup-social', label: 'Redes Sociais', placeholder: 'Mockup — redes sociais', src: './images/raizes-frescas-hero.png' },
       ],
       roadmap: { curto: ['Lançamento da presença digital', 'Fotografia de produto'], medio: ['Comunidade ativa nas redes sociais'], longo: ['Expansão dos materiais de loja'] },
     },
@@ -254,7 +254,7 @@ export function buildSummary(p) {
   if (id) {
     if (id.palette) out.dots = id.palette.slice(0, 6).map(c => ({ hex: c.hex, name: c.name }));
     if (id.typography) out.meta = id.typography.displayLabel + ' + ' + id.typography.bodyLabel;
-    if (id.mockups) out.shots = id.mockups.slice(0, 3).map(m => ({ id: m.id, label: m.label, placeholder: m.placeholder }));
+    if (id.mockups) out.shots = id.mockups.slice(0, 3).map(m => ({ id: m.id, label: m.label, placeholder: m.placeholder, src: m.src || '' }));
   }
   return out;
 }
