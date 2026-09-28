@@ -210,7 +210,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { active: 'investigacao', open: {}, data: null };
+  state = { active: null, open: {}, data: null };
 
   componentDidMount() {
     import('./work-data.js').then(m => { this._d = m; this.setState({ data: true }); });
