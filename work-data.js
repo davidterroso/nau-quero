@@ -15,6 +15,7 @@ export const PROJECTS = [
   {
     name: 'Gabriela Pereira', brand: 'Gabriela Pereira — Advocacia & Consultoria', year: '2026',
     category: 'identidade', categoryLabel: 'Identidade de Marca',
+    photo: './images/Placa%20de%20atendimento%20profissional%20(1).png',
     tags: ['Brand Guidelines', 'Direito & Advocacia', 'Identidade Visual'],
     desc: 'Brand guidelines completos para Gabriela Pereira, advogada há mais de 20 anos com foco em Direito Criminal, da Família e Menores — uma identidade sóbria e elegante construída para transmitir confiança, proximidade e rigor. Paleta bordô, pérola e dourado, tipografia serifada em contraste com uma sans-serif moderna, e um sistema completo de aplicações, do cartão de visita à presença digital.',
     identity: {
@@ -77,9 +78,10 @@ export const PROJECTS = [
       digitalComm: { text: 'Uma assinatura de email cuidada gera confiança — sobretudo quando o primeiro contacto é por email.', note: 'Assinatura predefinida no e-mail profissional, com logótipo e paleta da marca.', imgId: 'gp-signature' },
       presence: { website: 'Cartão de apresentação digital da marca — a validar e a lançar.', linkedin: ['Atualizar informações acerca do percurso de Gabriela Pereira.', 'Modificar o @ para gabrielapereira.adv.'] },
       mockups: [
-        { id: 'gp-mockup-cartao', label: 'Cartão de Visita', placeholder: 'Mockup — cartão de visita' },
+        { id: 'gp-mockup-cartao', label: 'Cartão de Visita', placeholder: 'Mockup — cartão de visita', src: './images/81da9fad-8bb4-4d74-9712-f31017f56090.png' },
+        { id: 'gp-mockup-sinaletica', label: 'Sinalética Horário & Andar', placeholder: 'Mockup — sinalética', src: './images/Placa%20de%20atendimento%20profissional%20(1).png' },
+        { id: 'gp-mockup-digital', label: 'Presença Digital', placeholder: 'Mockup — presença digital', src: './images/Espa%C3%A7o%20de%20trabalho%20elegante%20e%20sofisticado%20(1).png' },
         { id: 'gp-mockup-papel', label: 'Papel de Carta & Envelope', placeholder: 'Mockup — papel de carta e envelope' },
-        { id: 'gp-mockup-sinaletica', label: 'Sinalética Horário & Andar', placeholder: 'Mockup — sinalética' },
         { id: 'gp-mockup-agenda', label: 'Agenda & Material', placeholder: 'Mockup — agenda e material' },
       ],
       roadmap: {
@@ -128,7 +130,7 @@ export const PROJECTS = [
       mockups: [
         { id: 'rf-mockup-sacos', label: 'Sacos & Embalagem', placeholder: 'Mockup — sacos e embalagem', src: './images/raizes-frescas-embalagem.png' },
         { id: 'rf-mockup-montra', label: 'Montra & Sinalética', placeholder: 'Mockup — montra e sinalética', src: './images/raizes-frescas-cartao.png' },
-        { id: 'rf-mockup-social', label: 'Redes Sociais', placeholder: 'Mockup — redes sociais', src: './images/raizes-frescas-hero.png' },
+        { id: 'rf-mockup-social', label: 'Redes Sociais', placeholder: 'Mockup — redes sociais', src: './images/raizes-frescas-social.png' },
       ],
       roadmap: { curto: ['Lançamento da presença digital', 'Fotografia de produto'], medio: ['Comunidade ativa nas redes sociais'], longo: ['Expansão dos materiais de loja'] },
     },
