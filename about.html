@@ -33,7 +33,7 @@
 <title>Sobre</title>
 <link rel="icon" type="image/png" href="./images/favicon-gelado.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;1,400;1,500&family=League+Spartan:wght@300;400;500;600&family=Indie+Flower&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&family=Indie+Flower&display=swap" rel="stylesheet">
 <style>
   @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-Light.otf') format('opentype'); font-weight:300; font-style:normal; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
   @font-face { font-family:'The Seasons'; src:url('./fonts/TheSeasons-LightItalic.otf') format('opentype'); font-weight:300; font-style:italic; font-display:swap; unicode-range:U+0000-0025, U+0027-10FFFF; }
@@ -71,7 +71,7 @@
 </style>
 <script src="./ui-sound.js"></script>
 </helmet>
-<div style="font-family:'League Spartan',sans-serif; background:#F3E9D2; color:#391D01; overflow-x:hidden;">
+<div id="nq-top" style="font-family:'Poppins',sans-serif; background:#F3E9D2; color:#391D01; overflow-x:hidden;">
   <div style="position:fixed; inset:0; z-index:9998; pointer-events:none; opacity:0.07; background-image:url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%3E%3Cfilter%20id%3D%27n%27%20x%3D%270%27%20y%3D%270%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%272.6%27%20numOctaves%3D%272%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200.96%200%200%200%200%200.88%200%200%200%200%200.72%2012%200%200%200%20-7.4399999999999995%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27300%27%20height%3D%27300%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E&quot;), url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%3E%3Cfilter%20id%3D%27n%27%20x%3D%270%27%20y%3D%270%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%272.4%27%20numOctaves%3D%272%27%20seed%3D%2711%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200.08%200%200%200%200%200.03%200%200%200%200%200%2012%200%200%200%20-7.5600000000000005%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27300%27%20height%3D%27300%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E&quot;), url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%3E%3Cfilter%20id%3D%27n%27%20x%3D%270%27%20y%3D%270%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%273.5%27%20numOctaves%3D%272%27%20seed%3D%277%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200.9%200%200%200%200%200.78%200%200%200%200%200.58%208%200%200%200%20-4.8%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27300%27%20height%3D%27300%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E&quot;); background-size:300px 300px, 340px 340px, 260px 260px;"></div>
   <div style="position:fixed; inset:0; z-index:9; pointer-events:none; opacity:0.35; mix-blend-mode:multiply; background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27180%27 height=%27180%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.85%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27180%27 height=%27180%27 filter=%27url(%23n)%27/%3E%3C/svg%3E'); background-size:180px 180px;"></div>
 
@@ -80,16 +80,17 @@
       <img src="./images/nauquero-logo-brown.png" alt="NAU QUERO" style="height:22px; width:auto; display:block;" />
     </a>
     <input type="checkbox" id="nq-menu-toggle" class="nq-menu-toggle" style="position:absolute; opacity:0; pointer-events:none;"><label for="nq-menu-toggle" class="nq-menu-btn" aria-label="Abrir menu" style="display:none; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid rgba(57,29,1,0.28); border-radius:10px; cursor:pointer; flex:0 0 auto;"><svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1H18" stroke="#391D01" stroke-width="1.6"/><path d="M0 6.5H18" stroke="#391D01" stroke-width="1.6"/><path d="M0 12H18" stroke="#391D01" stroke-width="1.6"/></svg></label><nav class="nq-nav" style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
-      <a href="./home.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Início</a>
-      <a href="./about.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; background:#690A20; color:#F3E9D2; box-shadow:0 0 0 2px #690A20, 0 0 22px 4px rgba(172,192,72,0.9); transform:scale(1.05); transition:transform .3s ease, box-shadow .35s ease;" style-hover="box-shadow:0 0 0 2px #690A20, 0 0 26px 5px rgba(172,192,72,1);">Sobre</a>
-      <a href="./menu.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">O Menu</a>
-      <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Projetos</a>
-      <a href="./build-your-own.html" style="font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; background:#690A20; color:#F3E9D2; text-decoration:none; padding:14px 22px; border:2px solid #690A20; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; margin-left:6px; transition:transform .3s ease, background .3s ease, color .3s ease; animation:nqPulse 2.8s ease-in-out infinite;" style-hover="transform:rotate(-0.7deg); background:#F3E9D2; color:#690A20;">Monta o teu gelado →</a>
+      <a href="./home.html" style="font-family:'Poppins',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Início</a>
+      <a href="./about.html" style="font-family:'Poppins',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; background:#690A20; color:#F3E9D2; box-shadow:0 0 0 2px #690A20, 0 0 22px 4px rgba(172,192,72,0.9); transform:scale(1.05); transition:transform .3s ease, box-shadow .35s ease;" style-hover="box-shadow:0 0 0 2px #690A20, 0 0 26px 5px rgba(172,192,72,1);">Sobre</a>
+      <a href="./menu.html" style="font-family:'Poppins',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">O Menu</a>
+      <a href="./work.html" style="font-family:'Poppins',sans-serif; font-size:13.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; padding:11px 15px; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; transition:background .25s ease; box-shadow:0 0 14px 2px rgba(105,10,32,0.45); transition:transform .3s ease, box-shadow .35s ease;" style-hover="background:#F3E9D2; box-shadow:0 0 22px 3px rgba(172,192,72,0.9);">Projetos</a>
+      <a href="./build-your-own.html" style="font-family:'Poppins',sans-serif; font-size:13.5px; letter-spacing:0.015em; background:#690A20; color:#F3E9D2; text-decoration:none; padding:14px 22px; border:2px solid #690A20; border-radius:999px; white-space:nowrap; display:inline-flex; align-items:center; margin-left:6px; transition:transform .3s ease, background .3s ease, color .3s ease; animation:nqPulse 2.8s ease-in-out infinite;" style-hover="transform:rotate(-0.7deg); background:#F3E9D2; color:#690A20;">Monta o teu gelado →</a>
     </nav>
   </header>
 
-  <section style="padding:clamp(56px,7vw,104px) 5% clamp(44px,5vw,72px); border-bottom:1px solid rgba(57,29,1,0.28); position:relative;">
-    <div style="display:flex; align-items:center; justify-content:space-between; gap:clamp(20px,4vw,48px); flex-wrap:wrap; margin-bottom:clamp(24px,3vw,38px);">
+  <section style="padding:clamp(56px,7vw,104px) 5% clamp(56px,6.5vw,90px); background:#F3D9BC; position:relative; overflow:hidden;">
+    <span style="position:absolute; top:clamp(-40px,-4vw,-10px); right:clamp(-10px,1vw,20px); font-family:'Petrona',Georgia,serif; font-style:italic; font-size:clamp(160px,24vw,360px); line-height:1; color:#391D01; opacity:0.05; pointer-events:none; user-select:none;">”</span>
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:clamp(20px,4vw,48px); flex-wrap:wrap; margin-bottom:clamp(44px,5.5vw,72px); position:relative;">
       <div style="flex:1 1 min(100%,420px); min-width:0;">
         <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0 0 clamp(18px,2.4vw,28px);">Quem está por detrás do gelado?</p>
         <h1 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(28px,4.8vw,76px); line-height:0.9; letter-spacing:-0.04em; margin:0;">Why <span style="font-style:italic; color:#690A20;">ice cream?</span></h1>
@@ -98,25 +99,32 @@
         <img src="./images/kid-icecream-sticker.png" alt="" style="width:clamp(120px,14vw,200px); height:auto; display:block; transform:rotate(7deg); filter:drop-shadow(0 10px 18px rgba(57,29,1,0.25));" />
       </div>
     </div>
-    <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px;">
-      <div style="background:#F3E9D2; border:1px solid rgba(57,29,1,0.2); border-radius:18px; padding:clamp(20px,2.4vw,30px); display:flex; flex-direction:column; gap:10px; transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-4px); box-shadow:0 14px 30px -16px rgba(57,29,1,0.4);">
-        <span style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.2em; color:#690A20; opacity:0.7;">01</span>
-        <p style="font-size:clamp(14px,1.5vw,17px); line-height:1.6; margin:0;">Porque a primeira vez que percebi o que era uma marca foi a olhar para um gelado. Quando era criança, eu não queria qualquer gelado: queria os da Magnum. Só e sempre — Magnum.</p>
+    <div style="display:flex; gap:clamp(28px,4vw,64px); flex-wrap:wrap; align-items:flex-start; position:relative;">
+      <div data-reveal style="position:relative; flex:1 1 min(100%,560px); min-width:0; max-width:680px;">
+        <div style="position:absolute; left:21px; top:8px; bottom:8px; width:2px; background:linear-gradient(180deg, #690A20, rgba(105,10,32,0.08));"></div>
+        <div style="display:flex; flex-direction:column; gap:clamp(30px,3.6vw,44px);">
+          <div style="position:relative; padding-left:clamp(54px,6vw,68px);">
+            <span style="position:absolute; left:0; top:0; width:44px; height:44px; border-radius:50%; background:#690A20; color:#F3E9D2; display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.03em; box-shadow:0 0 0 5px #F3D9BC; transition:transform .3s ease;" style-hover="transform:scale(1.1) rotate(-8deg);">01</span>
+            <p style="font-size:clamp(15px,1.6vw,18.5px); line-height:1.7; margin:0;">Porque a primeira vez que percebi o que era uma marca foi a olhar para um gelado. Quando era criança, eu não queria qualquer gelado: queria os da Magnum. Só e sempre — Magnum.</p>
+          </div>
+          <div style="position:relative; padding-left:clamp(54px,6vw,68px);">
+            <span style="position:absolute; left:0; top:0; width:44px; height:44px; border-radius:50%; background:#ACC048; color:#391D01; display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.03em; box-shadow:0 0 0 5px #F3D9BC; transition:transform .3s ease;" style-hover="transform:scale(1.1) rotate(-8deg);">02</span>
+            <p style="font-size:clamp(15px,1.6vw,18.5px); line-height:1.7; margin:0;">Anos mais tarde, entrei numa gelataria Magnum em Itália e percebi que aquilo que, outrora, começou num gelado, estava a ir muito mais além. A montra, o balcão, o cuidado em cada camada — ficou claro que ninguém ali vendia apenas gelado: vendia-se a experiência de escolher, literalmente, cada camada, até à mais profunda ou à que fica à tona.</p>
+          </div>
+          <div style="position:relative; padding-left:clamp(54px,6vw,68px);">
+            <span style="position:absolute; left:0; top:0; width:44px; height:44px; border-radius:50%; background:#391D01; color:#F3E9D2; display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.03em; box-shadow:0 0 0 5px #F3D9BC; transition:transform .3s ease;" style-hover="transform:scale(1.1) rotate(-8deg);">03</span>
+            <p style="font-size:clamp(15px,1.6vw,18.5px); line-height:1.7; margin:0;">Uma gelataria não serve o mesmo a todos. Pergunta, sugere, monta camada a camada e entrega algo que só faz sentido para quem o pediu. Foi aí que percebi que uma marca é muito mais do que aquilo que vende — é a experiência que constrói à volta do produto.</p>
+          </div>
+          <div style="position:relative; padding-left:clamp(54px,6vw,68px);">
+            <span style="position:absolute; left:0; top:0; width:44px; height:44px; border-radius:50%; background:#F5C232; color:#391D01; display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-size:13px; letter-spacing:0.03em; box-shadow:0 0 0 5px #F3D9BC; transition:transform .3s ease;" style-hover="transform:scale(1.1) rotate(-8deg);">04</span>
+            <p style="font-size:clamp(15px,1.6vw,18.5px); line-height:1.7; margin:0;">E é exactamente assim que, depois de tantos anos a admirar marcas que se preocupam em surpreender quem está do outro lado, trabalho marcas.</p>
+          </div>
+        </div>
       </div>
-      <div style="background:#F3D9BC; border:1px solid rgba(57,29,1,0.2); border-radius:18px; padding:clamp(20px,2.4vw,30px); display:flex; flex-direction:column; gap:10px; transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-4px); box-shadow:0 14px 30px -16px rgba(57,29,1,0.4);">
-        <span style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.2em; color:#690A20; opacity:0.7;">02</span>
-        <p style="font-size:clamp(14px,1.5vw,17px); line-height:1.6; margin:0;">Anos mais tarde, entrei numa gelataria Magnum em Itália e percebi que aquilo que, outrora, começou num gelado, estava a ir muito mais além. A montra, o balcão, o cuidado em cada camada — ficou claro que ninguém ali vendia apenas gelado: vendia-se a experiência de escolher, literalmente, cada camada, até à mais profunda ou à que fica à tona.</p>
-      </div>
-      <div style="background:#F3D9BC; border:1px solid rgba(57,29,1,0.2); border-radius:18px; padding:clamp(20px,2.4vw,30px); display:flex; flex-direction:column; gap:10px; transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-4px); box-shadow:0 14px 30px -16px rgba(57,29,1,0.4);">
-        <span style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.2em; color:#690A20; opacity:0.7;">03</span>
-        <p style="font-size:clamp(14px,1.5vw,17px); line-height:1.6; margin:0;">Uma gelataria não serve o mesmo a todos. Pergunta, sugere, monta camada a camada e entrega algo que só faz sentido para quem o pediu. Foi aí que percebi que uma marca é muito mais do que aquilo que vende — é a experiência que constrói à volta do produto.</p>
-      </div>
-      <div style="background:#F3E9D2; border:1px solid rgba(57,29,1,0.2); border-radius:18px; padding:clamp(20px,2.4vw,30px); display:flex; flex-direction:column; gap:10px; transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-4px); box-shadow:0 14px 30px -16px rgba(57,29,1,0.4);">
-        <span style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.2em; color:#690A20; opacity:0.7;">04</span>
-        <p style="font-size:clamp(14px,1.5vw,17px); line-height:1.6; margin:0;">E é exactamente assim que, depois de tantos anos a admirar marcas que se preocupam em surpreender quem está do outro lado, trabalho marcas.</p>
+      <div data-reveal data-reveal-delay="150" style="flex:0 1 260px; min-width:min(100%,220px); align-self:center; position:relative;">
+        <p style="position:relative; background:#391D01; color:#F3E9D2; border-radius:20px; padding:clamp(24px,2.6vw,34px); transform:rotate(-1.4deg); box-shadow:0 18px 34px -16px rgba(57,29,1,0.5); font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(19px,2vw,25px); line-height:1.3; margin:0; transition:transform .35s ease;" style-hover="transform:rotate(0deg) translateY(-4px);">It<span style="font-family:'Petrona',Georgia,serif;">’</span>s okay to like <span style="color:#ACC048;">extraordinary.</span></p>
       </div>
     </div>
-    <p style="align-self:flex-start; position:relative; background:#391D01; color:#F3E9D2; border:1px solid rgba(57,29,1,0.28); border-radius:14px; padding:16px 22px; transform:rotate(-0.7deg); font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(16.3px,1.89vw,22.4px); line-height:1.25; margin:clamp(24px,3vw,34px) 0 0; display:inline-block;">It<span style="font-family:'Petrona',Georgia,serif;">’</span>s okay to like extraordinary.</p>
   </section>
 
   <div style="position:relative; z-index:3;">
@@ -140,7 +148,7 @@
   </svg>
   </div>
 
-  <section style="padding:clamp(56px,7vw,110px) 5%; background:#F3D9BC; border-bottom:1px solid rgba(57,29,1,0.28);">
+  <section style="padding:clamp(56px,7vw,110px) 5%; background:#F3D9BC;">
     <div style="display:flex; gap:clamp(28px,5vw,72px); flex-wrap:wrap; align-items:flex-start;">
       <div data-reveal style="flex:0 1 380px; min-width:min(100%,260px); border:1px solid rgba(57,29,1,0.28); border-radius:16px; overflow:hidden; background:#F3E9D2;">
         <img src="./images/mariana-photo.png" alt="Mariana Rodrigues" style="width:100%; display:block; aspect-ratio:3/4; object-fit:cover; object-position:top center;"></img>
@@ -150,20 +158,20 @@
         <p style="font-size:clamp(14px,1.55vw,17px); line-height:1.65; margin:0 0 18px; max-width:60ch;">Tenho 25 anos e sou de Vila do Conde — cidade de naus quinhentistas e rendas de bilros. Licenciei-me em Gestão e fiz o mestrado em Gestão de Marketing no IPAM, onde terminei como melhor aluna do curso, com 19/20, e uma tese defendida com 20/20.</p>
         <p style="font-size:clamp(14px,1.55vw,17px); line-height:1.65; margin:0 0 26px; max-width:60ch;">O que faço vive no cruzamento de três coisas que raramente andam juntas — e é aí que está a diferença.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:26px;">
-          <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; background:#C9728E; border:1px solid rgba(57,29,1,0.28); border-radius:14px; padding:12px 16px;">Criatividade</span>
-          <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; background:#ACC048; border:1px solid rgba(57,29,1,0.28); border-radius:14px; padding:12px 16px;">Estratégia</span>
-          <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; background:#C69A62; color:#391D01; border:1px solid rgba(57,29,1,0.28); border-radius:14px; padding:12px 16px;">Análise</span>
+          <span style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; background:#C9728E; border:1px solid rgba(57,29,1,0.28); border-radius:14px; padding:12px 16px;">Criatividade</span>
+          <span style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; background:#ACC048; border:1px solid rgba(57,29,1,0.28); border-radius:14px; padding:12px 16px;">Estratégia</span>
+          <span style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; background:#C69A62; color:#391D01; border:1px solid rgba(57,29,1,0.28); border-radius:14px; padding:12px 16px;">Análise</span>
         </div>
-        <p style="font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(18.7px,2.5vw,34.3px); line-height:1.15; margin:0; color:#690A20;"><span style="font-family:'League Spartan',sans-serif; ">“</span>Why<span style="font-family:'League Spartan',sans-serif; ">?</span> But why<span style="font-family:'League Spartan',sans-serif; ">?”</span></p>
+        <p style="font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(18.7px,2.5vw,34.3px); line-height:1.15; margin:0; color:#690A20;"><span style="font-family:'Poppins',sans-serif; ">“</span>Why<span style="font-family:'Poppins',sans-serif; ">?</span> But why<span style="font-family:'Poppins',sans-serif; ">?”</span></p>
       </div>
     </div>
   </section>
 
-  <section style="padding:clamp(56px,7vw,110px) 5%; border-bottom:1px solid rgba(57,29,1,0.28);">
+  <section style="padding:clamp(56px,7vw,110px) 5%;">
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr)); gap:20px;">
       <sc-for list="{{ story }}" as="st" hint-placeholder-count="3">
         <article data-reveal data-reveal-delay="{{ st.delay }}" style="background:{{ st.bg }}; color:{{ st.ink }}; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:clamp(24px,2.6vw,34px); display:flex; flex-direction:column; gap:14px;">
-          <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; opacity:0.75;">{{ st.num }}</span>
+          <span style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.2em; opacity:0.75;">{{ st.num }}</span>
           <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(18.7px,1.87vw,25px); line-height:1.05; margin:0;">{{ st.title }}</h3>
           <p style="font-size:14px; line-height:1.7; margin:0;">{{ st.text }}</p>
         </article>
@@ -175,7 +183,7 @@
         <sc-for list="{{ personasLoop }}" as="pn" hint-placeholder-count="18">
           <span style="display:flex; align-items:baseline; gap:10px; padding:16px clamp(12px,1.4vw,20px); white-space:nowrap;">
             <span style="font-family:'The Seasons','Petrona',Georgia,serif; font-size:clamp(17px,1.7vw,23px); line-height:1;">{{ pn.label }}</span>
-            <span style="font-family:'League Spartan',sans-serif; font-size:12.5px; opacity:0.7;">{{ pn.quip }}</span>
+            <span style="font-family:'Poppins',sans-serif; font-size:12.5px; opacity:0.7;">{{ pn.quip }}</span>
             <span style="color:#690A20; font-size:12px;">✦</span>
           </span>
         </sc-for>
@@ -183,7 +191,7 @@
     </div>
   </section>
 
-  <section style="padding:clamp(56px,7vw,110px) 5%; background:#391D01; color:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28);">
+  <section style="padding:clamp(56px,7vw,110px) 5%; background:#391D01; color:#F3E9D2;">
     <div style="display:flex; gap:clamp(28px,5vw,72px); flex-wrap:wrap; align-items:flex-start;">
       <div style="flex:1 1 min(100%,420px); min-width:0;">
         <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#C69A62; margin:0 0 18px;">Investigação</p>
@@ -192,12 +200,12 @@
       <div style="flex:1 1 min(100%,380px); min-width:0; display:flex; flex-direction:column; gap:18px;">
         <p style="font-size:clamp(14px,1.55vw,17px); line-height:1.7; margin:0;">Fui Marketing Researcher no IPAM. Antes de criar, preciso de entender — por isso tenho 6 artigos científicos em publicação nas áreas de comportamento do consumidor, estratégia de marketing e sustentabilidade.</p>
         <p style="font-size:clamp(14px,1.55vw,17px); line-height:1.7; margin:0;">É a investigação que impede o trabalho criativo de ser palpite. Dados, entrevistas e leitura de mercado primeiro; decisões depois.</p>
-        <a href="./work.html" style="align-self:flex-start; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; border-bottom:1px solid #F3E9D2; padding-bottom:4px; display:inline-flex; align-items:flex-end;">Ver a investigação →</a>
+        <a href="./work.html" style="align-self:flex-start; font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; border-bottom:1px solid #F3E9D2; padding-bottom:4px; display:inline-flex; align-items:flex-end;">Ver a investigação →</a>
       </div>
     </div>
   </section>
 
-  <section style="padding:clamp(24px,2.6vw,40px) 5%; background:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28);">
+  <section style="padding:clamp(24px,2.6vw,40px) 5%; background:#F3E9D2;">
     <div style="display:flex; align-items:center; gap:clamp(24px,4vw,56px); flex-wrap:wrap;">
       <div style="flex:1 1 min(100%,480px); min-width:0;">
         <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0 0 16px;">More than marketing</p>
@@ -210,7 +218,7 @@
     </div>
   </section>
 
-  <section style="padding:clamp(56px,7vw,110px) 5%; background:#690A20; border-bottom:1px solid rgba(243,233,210,0.22);">
+  <section style="padding:clamp(56px,7vw,110px) 5%; background:#690A20;">
     <div style="display:flex; gap:clamp(14px,2.5vw,32px); align-items:center; flex-wrap:wrap; margin:0 0 18px;">
       <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#ACC048; margin:0;">As credenciais · a minha caixa de ferramentas</p>
     </div>
@@ -220,13 +228,13 @@
         <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; margin:0 0 14px; color:#F3E9D2; opacity:0.75;">Formação</p>
         <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; align-items:stretch;">
           <sc-for list="{{ credentials }}" as="cr" hint-placeholder-count="4">
-            <button type="button" onClick="{{ cr.toggle }}" style="display:inline-flex; align-items:center; justify-content:center; gap:9px; background:{{ cr.bg }}; color:{{ cr.ink }}; border:1px solid rgba(243,233,210,0.3); border-radius:999px; padding:15px 20px; text-align:center; font-family:'League Spartan',sans-serif; font-size:13.5px; cursor:pointer; box-shadow:0 0 12px 1px rgba(172,192,72,0.3); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:translateY(-2px); box-shadow:0 0 22px 3px rgba(172,192,72,0.75);">
-              <span style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.15em; opacity:0.6;">{{ cr.num }}</span>
+            <button type="button" onClick="{{ cr.toggle }}" style="display:inline-flex; align-items:center; justify-content:center; gap:9px; background:{{ cr.bg }}; color:{{ cr.ink }}; border:1px solid rgba(243,233,210,0.3); border-radius:999px; padding:15px 20px; text-align:center; font-family:'Poppins',sans-serif; font-size:13.5px; cursor:pointer; box-shadow:0 0 12px 1px rgba(172,192,72,0.3); transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:translateY(-2px); box-shadow:0 0 22px 3px rgba(172,192,72,0.75);">
+              <span style="font-family:'Poppins',sans-serif; font-size:12px; letter-spacing:0.15em; opacity:0.6;">{{ cr.num }}</span>
               <span>{{ cr.label }}</span>
             </button>
           </sc-for>
         </div>
-        <p style="font-family:'League Spartan',sans-serif; font-size:14px; line-height:1.6; margin:14px 0 0; min-height:1.6em; color:#ACC048;">{{ credNote }}</p>
+        <p style="font-family:'Poppins',sans-serif; font-size:14px; line-height:1.6; margin:14px 0 0; min-height:1.6em; color:#ACC048;">{{ credNote }}</p>
       </div>
       <div style="flex:1 1 min(100%,280px); min-width:0;">
         <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; margin:0 0 14px; color:#F3E9D2; opacity:0.75;">Línguas <span style="opacity:0.75;">· toca para ouvir</span></p>
@@ -234,8 +242,8 @@
           <sc-for list="{{ languages }}" as="lg" hint-placeholder-count="2">
             <button type="button" onClick="{{ lg.play }}" style="display:inline-flex; align-items:center; gap:10px; background:#F3E9D2; border:1px solid rgba(243,233,210,0.3); border-radius:999px; padding:12px 18px 12px 14px; cursor:pointer; color:#391D01; transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:translateY(-2px); box-shadow:0 0 22px 3px rgba(172,192,72,0.75);">
               <span style="width:22px; height:22px; border-radius:50%; background:#690A20; color:#F3E9D2; display:flex; align-items:center; justify-content:center; font-size:9px; padding-left:2px;">▶</span>
-              <span style="font-family:'League Spartan',sans-serif; font-size:12.5px;">{{ lg.name }}</span>
-              <span style="font-family:'League Spartan',sans-serif; font-size:12px; opacity:0.6;">{{ lg.hello }}</span>
+              <span style="font-family:'Poppins',sans-serif; font-size:12.5px;">{{ lg.name }}</span>
+              <span style="font-family:'Poppins',sans-serif; font-size:12px; opacity:0.6;">{{ lg.hello }}</span>
             </button>
           </sc-for>
         </div>
@@ -248,10 +256,10 @@
         <sc-for list="{{ skills }}" as="sk" hint-placeholder-count="8">
           <div style="position:relative; overflow:hidden; flex:0 0 auto; width:280px; min-height:110px; background:{{ sk.bg }}; border:1px solid rgba(57,29,1,0.2); border-radius:16px; padding:20px; display:flex; flex-direction:column; justify-content:space-between; gap:12px; opacity:{{ sk.op }}; transform:{{ sk.scale }}; box-shadow:{{ sk.shadow }}; transition:opacity .5s ease, transform .5s cubic-bezier(.4,0,.2,1), background .5s ease, box-shadow .5s ease;">
             <span style="position:absolute; bottom:-10px; right:8px; font-family:'Petrona',Georgia,serif; font-style:italic; font-size:52px; line-height:1; color:#690A20; opacity:0.13;">{{ sk.num }}</span>
-            <p style="position:relative; font-family:'League Spartan',sans-serif; font-size:15px; line-height:1.3; margin:0; color:#391D01;">{{ sk.label }}</p>
+            <p style="position:relative; font-family:'Poppins',sans-serif; font-size:15px; line-height:1.3; margin:0; color:#391D01;">{{ sk.label }}</p>
             <div style="position:relative; display:flex; gap:6px; flex-wrap:wrap; padding-right:52px;">
               <sc-for list="{{ sk.tools }}" as="tl" hint-placeholder-count="2">
-                <span style="font-family:'League Spartan',sans-serif; font-size:11.5px; letter-spacing:0.04em; color:#391D01; background:#F3E9D2; border:1px solid rgba(57,29,1,0.22); border-radius:999px; padding:3px 9px;">{{ tl }}</span>
+                <span style="font-family:'Poppins',sans-serif; font-size:11.5px; letter-spacing:0.04em; color:#391D01; background:#F3E9D2; border:1px solid rgba(57,29,1,0.22); border-radius:999px; padding:3px 9px;">{{ tl }}</span>
               </sc-for>
             </div>
           </div>
@@ -260,12 +268,12 @@
     </div>
     <div style="display:flex; gap:8px; align-items:center; justify-content:center; margin-top:16px;">
       <button type="button" onClick="{{ skillsPrev }}" aria-label="Anterior" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(243,233,210,0.3); background:transparent; color:#F3E9D2; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center; transition:background .25s ease, transform .25s ease;" style-hover="background:#ACC048; color:#391D01; transform:scale(1.08);">←</button>
-      <span style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.1em; color:#F3E9D2; opacity:0.75; min-width:56px; text-align:center;">{{ skillsCount }}</span>
+      <span style="font-family:'Poppins',sans-serif; font-size:12px; letter-spacing:0.1em; color:#F3E9D2; opacity:0.75; min-width:56px; text-align:center;">{{ skillsCount }}</span>
       <button type="button" onClick="{{ skillsNext }}" aria-label="Seguinte" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(243,233,210,0.3); background:transparent; color:#F3E9D2; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center; transition:background .25s ease, transform .25s ease;" style-hover="background:#ACC048; color:#391D01; transform:scale(1.08);">→</button>
     </div>
   </section>
 
-  <section style="padding:clamp(56px,7vw,110px) 5%; background:#391D01; color:#F3E9D2; border-bottom:1px solid rgba(57,29,1,0.28); position:relative; overflow:hidden;">
+  <section style="padding:clamp(56px,7vw,110px) 5%; background:#391D01; color:#F3E9D2; position:relative; overflow:hidden;">
     <div style="position:absolute; inset:0; opacity:0.45; background-image:radial-gradient(#F3E9D2 1.5px, transparent 1.6px); background-size:22px 22px;"></div>
     <div style="position:relative;">
       <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(27.3px,4.41vw,77.1px); line-height:0.9; letter-spacing:-0.03em; margin:0 0 clamp(24px,3vw,38px); max-width:16ch; color:#F3E9D2;">Curiosidades sobre <span style="font-style:italic; color:#ACC048;">mim</span></h2>
@@ -273,28 +281,28 @@
         <div style="flex:0 1 min(100%,240px); display:flex; flex-direction:column; gap:14px;">
           <div style="display:flex; gap:9px; flex-wrap:wrap;">
             <sc-for list="{{ facts }}" as="ft" hint-placeholder-count="8">
-              <button type="button" onClick="{{ ft.pick }}" aria-label="Curiosidade {{ ft.num }}" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(243,233,210,0.4); background:{{ ft.bg }}; color:{{ ft.ink }}; cursor:pointer; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.06em; display:flex; align-items:center; justify-content:center; transition:transform .3s ease, background .3s ease;" style-hover="transform:translateY(-3px) scale(1.06);">{{ ft.num }}</button>
+              <button type="button" onClick="{{ ft.pick }}" aria-label="Curiosidade {{ ft.num }}" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(243,233,210,0.4); background:{{ ft.bg }}; color:{{ ft.ink }}; cursor:pointer; font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.06em; display:flex; align-items:center; justify-content:center; transition:transform .3s ease, background .3s ease;" style-hover="transform:translateY(-3px) scale(1.06);">{{ ft.num }}</button>
             </sc-for>
           </div>
-          <button type="button" onClick="{{ factShuffle }}" style="align-self:flex-start; background:none; border:0; border-bottom:1px solid rgba(243,233,210,0.5); padding:0 0 3px; cursor:pointer; font-family:'League Spartan',sans-serif; font-size:14px; color:#F3E9D2; transition:color .25s ease, border-color .25s ease;" style-hover="color:#ACC048; border-color:#ACC048;">Surpreende-me →</button>
+          <button type="button" onClick="{{ factShuffle }}" style="align-self:flex-start; background:none; border:0; border-bottom:1px solid rgba(243,233,210,0.5); padding:0 0 3px; cursor:pointer; font-family:'Poppins',sans-serif; font-size:14px; color:#F3E9D2; transition:color .25s ease, border-color .25s ease;" style-hover="color:#ACC048; border-color:#ACC048;">Surpreende-me →</button>
         </div>
         <div style="flex:1 1 min(100%,260px); max-width:520px; min-width:0; background:#F3E9D2; border:1px solid rgba(57,29,1,0.28); border-radius:16px; padding:clamp(18px,2vw,26px); display:flex; flex-direction:column; justify-content:flex-start; gap:12px;">
-          <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.2em; margin:0; color:#690A20;">{{ factNum }}</p>
+          <p style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.2em; margin:0; color:#690A20;">{{ factNum }}</p>
           <p style="font-family:'Petrona',Georgia,serif; font-size:clamp(13.6px,1.35vw,16.5px); line-height:1.45; margin:0; text-wrap:pretty; color:#391D01;">{{ factText }}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="padding:clamp(64px,8vw,130px) 5%; border-bottom:1px solid rgba(57,29,1,0.28);">
+  <section style="padding:clamp(64px,8vw,130px) 5%;">
     <div style="max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:clamp(32px,6vw,96px); flex-wrap:wrap;">
     <div style="max-width:720px; flex:0 1 min(100%,720px); min-width:0; background:#391D01; color:#F3E9D2; border-radius:clamp(24px,3vw,36px); padding:clamp(32px,4.5vw,56px); box-shadow:0 0 40px 8px rgba(105,10,32,0.35); transition:transform .4s ease, box-shadow .4s ease;" style-hover="transform:translateY(-6px); box-shadow:0 0 56px 14px rgba(172,192,72,0.35);">
       <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(28px,4.8vw,76px); line-height:0.9; letter-spacing:-0.04em; margin:0 0 clamp(24px,3vw,38px); color:#F3E9D2;">So, why <span style="font-style:italic; color:#ACC048;">Nau Quero?</span></h2>
       <p style="font-size:clamp(14.6px,1.72vw,18.1px); line-height:1.65; margin:0 0 20px; max-width:60ch; color:#F3E9D2;">Desde pequena que a minha palavra favorita era "não quero". Não quero aquela comida. Não quero aquela roupa. Não quero o que todos chamam de normal. Vila do Conde é cidade de naus — e daí veio o nome: uma nau que não quer o caminho já traçado.</p>
       <p style="font-size:clamp(14.6px,1.72vw,18.1px); line-height:1.65; margin:0 0 clamp(30px,3.6vw,46px); max-width:60ch; color:#F3E9D2; opacity:0.85;">É esse o filtro de tudo o que faço aqui: se já existe igual, não interessa. Nem para mim, nem para a tua marca.</p>
       <div style="display:flex; gap:14px; flex-wrap:wrap;">
-        <a href="./build-your-own.html" style="display:inline-flex; align-items:center; background:#ACC048; color:#391D01; font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; padding:14px 22px; border:1px solid transparent; border-radius:999px; white-space:nowrap; text-decoration:none; transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.7deg) translateY(-2px); box-shadow:0 0 24px 4px rgba(172,192,72,0.6);">Vamos falar →</a>
-        <a href="./menu.html" style="display:inline-flex; align-items:center; background:transparent; color:#F3E9D2; font-family:'League Spartan',sans-serif; font-size:13.5px; letter-spacing:0.015em; padding:14px 22px; border:1px solid rgba(243,233,210,0.4); border-radius:999px; white-space:nowrap; text-decoration:none; transition:transform .3s ease, background .3s ease, color .3s ease;" style-hover="transform:rotate(-0.7deg) translateY(-2px); background:#F3E9D2; color:#391D01;">Explorar o menu →</a>
+        <a href="./build-your-own.html" style="display:inline-flex; align-items:center; background:#ACC048; color:#391D01; font-family:'Poppins',sans-serif; font-size:13.5px; letter-spacing:0.015em; padding:14px 22px; border:1px solid transparent; border-radius:999px; white-space:nowrap; text-decoration:none; transition:transform .3s ease, box-shadow .35s ease;" style-hover="transform:rotate(-0.7deg) translateY(-2px); box-shadow:0 0 24px 4px rgba(172,192,72,0.6);">Vamos falar →</a>
+        <a href="./menu.html" style="display:inline-flex; align-items:center; background:transparent; color:#F3E9D2; font-family:'Poppins',sans-serif; font-size:13.5px; letter-spacing:0.015em; padding:14px 22px; border:1px solid rgba(243,233,210,0.4); border-radius:999px; white-space:nowrap; text-decoration:none; transition:transform .3s ease, background .3s ease, color .3s ease;" style-hover="transform:rotate(-0.7deg) translateY(-2px); background:#F3E9D2; color:#391D01;">Explorar o menu →</a>
       </div>
     </div>
     </div>
@@ -303,27 +311,30 @@
   <footer style="background:#391D01; color:#F3E9D2; padding:clamp(48px,6vw,84px) 5% 34px;">
     <div style="display:flex; gap:clamp(28px,4vw,64px); flex-wrap:wrap; justify-content:space-between; align-items:flex-start; padding-bottom:40px; border-bottom:1px solid rgba(243,233,210,0.25);">
       <div style="display:flex; flex-direction:column; gap:16px;">
-        <div>
+        <a href="./home.html" style="display:block; text-decoration:none; color:inherit; width:fit-content; transition:transform .3s ease;" style-hover="transform:rotate(-3deg) scale(1.04);">
           <img src="./images/nauquero-logo-brown.png" alt="NAU QUERO" style="height:26px; width:auto; display:block; margin:0 0 8px; filter:brightness(0) invert(1) sepia(0) saturate(0) brightness(2);" />
-          <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; margin:0; opacity:0.7;">Mariana Rodrigues · Vila do Conde</p>
-        </div>
+          <p style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; margin:0; opacity:0.7;">Mariana Rodrigues · Vila do Conde</p>
+        </a>
         <div style="display:flex; flex-direction:column; gap:6px;">
-          <a href="mailto:nauquero.mr@gmail.com" style="display:inline-flex; align-items:center; gap:9px; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; padding:6px 10px 6px 4px; margin-left:-4px; border-radius:999px; transition:background .3s ease, transform .3s ease, color .3s ease;" style-hover="background:rgba(172,192,72,0.14); color:#ACC048; transform:translateX(4px);"><span style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; border:1px solid rgba(243,233,210,0.35); font-size:11px; flex:0 0 auto;">✉</span>nauquero.mr@gmail.com</a>
-          <a href="https://www.linkedin.com/in/mariana-rodrigues-2108/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; padding:6px 10px 6px 4px; margin-left:-4px; border-radius:999px; transition:background .3s ease, transform .3s ease, color .3s ease;" style-hover="background:rgba(172,192,72,0.14); color:#ACC048; transform:translateX(4px);"><span style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; border:1px solid rgba(243,233,210,0.35); font-size:10px; flex:0 0 auto;">in</span>LinkedIn</a>
-          <a href="https://www.instagram.com/nauquero.mr/" target="_blank" rel="noopener" style="display:none; align-items:center; gap:9px; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; padding:6px 10px 6px 4px; margin-left:-4px; border-radius:999px; transition:background .3s ease, transform .3s ease, color .3s ease;" style-hover="background:rgba(172,192,72,0.14); color:#ACC048; transform:translateX(4px);"><span style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; border:1px solid rgba(243,233,210,0.35); font-size:11px; flex:0 0 auto;">@</span>@nauquero.mr</a>
+          <a href="mailto:nauquero.mr@gmail.com" style="display:inline-flex; align-items:center; gap:9px; font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; padding:6px 10px 6px 4px; margin-left:-4px; border-radius:999px; transition:background .3s ease, transform .3s ease, color .3s ease;" style-hover="background:rgba(172,192,72,0.14); color:#ACC048; transform:translateX(4px);"><span style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; border:1px solid rgba(243,233,210,0.35); font-size:11px; flex:0 0 auto;">✉</span>nauquero.mr@gmail.com</a>
+          <a href="https://www.linkedin.com/in/mariana-rodrigues-2108/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; padding:6px 10px 6px 4px; margin-left:-4px; border-radius:999px; transition:background .3s ease, transform .3s ease, color .3s ease;" style-hover="background:rgba(172,192,72,0.14); color:#ACC048; transform:translateX(4px);"><span style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; border:1px solid rgba(243,233,210,0.35); font-size:10px; flex:0 0 auto;">in</span>LinkedIn</a>
+          <a href="https://www.instagram.com/nauquero.mr/" target="_blank" rel="noopener" style="display:none; align-items:center; gap:9px; font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; padding:6px 10px 6px 4px; margin-left:-4px; border-radius:999px; transition:background .3s ease, transform .3s ease, color .3s ease;" style-hover="background:rgba(172,192,72,0.14); color:#ACC048; transform:translateX(4px);"><span style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; border:1px solid rgba(243,233,210,0.35); font-size:11px; flex:0 0 auto;">@</span>@nauquero.mr</a>
         </div>
       </div>
       <nav style="display:flex; flex-direction:column; gap:10px;">
-        <a href="./home.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Início</a>
-        <a href="./about.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Sobre</a>
-        <a href="./menu.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">O Menu</a>
-        <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Projetos</a>
-        <a href="./build-your-own.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Monta o teu gelado</a>
+        <a href="./home.html" style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Início</a>
+        <a href="./about.html" style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Sobre</a>
+        <a href="./menu.html" style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">O Menu</a>
+        <a href="./work.html" style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Projetos</a>
+        <a href="./build-your-own.html" style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Monta o teu gelado</a>
       </nav>
     </div>
     <div style="padding-top:28px; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; align-items:center;">
-      <p style="font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(15.6px,1.87vw,23.4px); margin:0; color:#F3E9D2;">It<span style="font-family:'Petrona',Georgia,serif;">’</span>s okay to like extraordinary.</p>
-      <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; margin:0; opacity:0.55;">© 2026 NAU QUERO</p>
+      <p style="font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(15.6px,1.87vw,23.4px); margin:0; color:#F3E9D2; transition:color .3s ease;" style-hover="color:#ACC048;">It<span style="font-family:'Petrona',Georgia,serif;">’</span>s okay to like extraordinary.</p>
+      <div style="display:flex; align-items:center; gap:18px;">
+        <p style="font-family:'Poppins',sans-serif; font-size:12.5px; letter-spacing:0.015em; margin:0; opacity:0.55;">© 2026 NAU QUERO</p>
+        <a href="#nq-top" style="display:inline-flex; align-items:center; gap:6px; font-family:'Poppins',sans-serif; font-size:12px; letter-spacing:0.04em; color:#F3E9D2; text-decoration:none; opacity:0.7; border:1px solid rgba(243,233,210,0.3); border-radius:999px; padding:8px 13px; transition:opacity .3s ease, transform .3s ease, background .3s ease;" style-hover="opacity:1; background:#ACC048; color:#391D01; transform:translateY(-3px);">Topo ↑</a>
+      </div>
     </div>
   </footer>
 </div>
