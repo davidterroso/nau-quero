@@ -4,6 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<style>html{background:#F3E9D2;}body{background:#F3E9D2;opacity:0;transition:opacity .35s ease;}</style>
+<script>
+(function(){
+  addEventListener('DOMContentLoaded', function(){
+    requestAnimationFrame(function(){ document.body.style.opacity='1'; });
+  });
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if(!a) return;
+    if(a.target==='_blank'||a.hasAttribute('download')) return;
+    var href = a.getAttribute('href');
+    if(!href||href.charAt(0)==='#'||href.indexOf('mailto:')===0||href.indexOf('tel:')===0) return;
+    var url;
+    try{ url=new URL(href, location.href); }catch(err){ return; }
+    if(url.origin!==location.origin) return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0) return;
+    e.preventDefault();
+    document.body.style.opacity='0';
+    setTimeout(function(){ location.href=url.href; }, 220);
+  });
+})();
+</script>
 </head>
 <body>
 <x-dc>
@@ -160,15 +182,15 @@
       <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(27.3px,4.41vw,73.9px); line-height:0.88; letter-spacing:-0.03em; margin:0; max-width:22ch;">A few of my favourite <span style="font-style:italic; color:#690A20;">flavours.</span></h2>
       <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; border-bottom:1px solid #690A20; padding-bottom:4px; display:inline-flex; align-items:flex-end;">Ver todos os projetos →</a>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:clamp(14px,1.6vw,20px); align-items:start;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:clamp(10px,1.2vw,16px); align-items:start;">
       <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="3">
-        <a data-reveal href="./work.html" style="display:flex; flex-direction:column; gap:10px; text-decoration:none; color:#391D01; transition:transform .3s ease;" style-hover="transform:translateY(-5px) scale(1.02);">
-          <div style="position:relative; aspect-ratio:4/5; border:1px solid rgba(57,29,1,0.22); border-radius:12px; overflow:hidden; background:{{ pr.bg }}; box-shadow:{{ pr.glow }}; transition:box-shadow .35s ease;">
+        <a data-reveal href="./work.html" style="display:flex; flex-direction:column; gap:8px; text-decoration:none; color:#391D01; background:rgba(57,29,1,0.03); border:1px solid rgba(57,29,1,0.14); border-radius:16px; padding:9px; transition:transform .3s ease, border-color .3s ease, background .3s ease;" style-hover="transform:translateY(-4px); border-color:rgba(105,10,32,0.4); background:rgba(57,29,1,0.06);">
+          <div style="position:relative; aspect-ratio:1/1; border-radius:10px; overflow:hidden; background:{{ pr.bg }};">
             <image-slot id="{{ pr.slot }}" shape="rect" placeholder="{{ pr.ph }}" src="{{ pr.photoSrc }}" style="position:absolute; inset:0;"></image-slot>
           </div>
-          <div style="display:flex; flex-direction:column; gap:3px;">
-            <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:17.4px; line-height:1.1; margin:0;">{{ pr.name }}</h3>
-            <span style="font-family:'League Spartan',sans-serif; font-size:12px; letter-spacing:0.015em; color:{{ pr.accent }}; opacity:0.9;">{{ pr.sector }}</span>
+          <div style="display:flex; flex-direction:column; gap:2px; padding:0 2px 3px;">
+            <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:15px; line-height:1.1; margin:0;">{{ pr.name }}</h3>
+            <span style="font-family:'League Spartan',sans-serif; font-size:11px; letter-spacing:0.015em; color:{{ pr.accent }}; opacity:0.9;">{{ pr.sector }}</span>
           </div>
         </a>
       </sc-for>
@@ -188,23 +210,23 @@
 
   <footer style="background:#391D01; color:#F3E9D2; padding:clamp(48px,6vw,84px) 5% 34px;">
     <div style="display:flex; gap:clamp(28px,4vw,64px); flex-wrap:wrap; justify-content:space-between; align-items:flex-start; padding-bottom:40px; border-bottom:1px solid rgba(243,233,210,0.25);">
-      <div style="display:flex; gap:18px; align-items:flex-start;">
+      <div style="display:flex; flex-direction:column; gap:16px;">
         <div>
           <img src="./images/nauquero-logo-brown.png" alt="NAU QUERO" style="height:26px; width:auto; display:block; margin:0 0 8px; filter:brightness(0) invert(1) sepia(0) saturate(0) brightness(2);" />
           <p style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; margin:0; opacity:0.7;">Mariana Rodrigues · Vila do Conde</p>
         </div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:10px;">
-        <a href="https://www.instagram.com/nauquero.mr/" target="_blank" rel="noopener" style="display:none; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; align-items:center;" style-hover="color:#ACC048;">@nauquero.mr</a>
-        <a href="mailto:nauquero.mr@gmail.com" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#ACC048;">nauquero.mr@gmail.com</a>
-        <a href="https://www.linkedin.com/in/mariana-rodrigues-2108/" target="_blank" rel="noopener" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#ACC048;">LinkedIn</a>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <a href="mailto:nauquero.mr@gmail.com" style="display:inline-flex; align-items:center; gap:9px; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; padding:6px 10px 6px 4px; margin-left:-4px; border-radius:999px; transition:background .3s ease, transform .3s ease, color .3s ease;" style-hover="background:rgba(172,192,72,0.14); color:#ACC048; transform:translateX(4px);"><span style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; border:1px solid rgba(243,233,210,0.35); font-size:11px; flex:0 0 auto;">✉</span>nauquero.mr@gmail.com</a>
+          <a href="https://www.linkedin.com/in/mariana-rodrigues-2108/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; padding:6px 10px 6px 4px; margin-left:-4px; border-radius:999px; transition:background .3s ease, transform .3s ease, color .3s ease;" style-hover="background:rgba(172,192,72,0.14); color:#ACC048; transform:translateX(4px);"><span style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; border:1px solid rgba(243,233,210,0.35); font-size:10px; flex:0 0 auto;">in</span>LinkedIn</a>
+          <a href="https://www.instagram.com/nauquero.mr/" target="_blank" rel="noopener" style="display:none; align-items:center; gap:9px; font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; padding:6px 10px 6px 4px; margin-left:-4px; border-radius:999px; transition:background .3s ease, transform .3s ease, color .3s ease;" style-hover="background:rgba(172,192,72,0.14); color:#ACC048; transform:translateX(4px);"><span style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; border:1px solid rgba(243,233,210,0.35); font-size:11px; flex:0 0 auto;">@</span>@nauquero.mr</a>
+        </div>
       </div>
       <nav style="display:flex; flex-direction:column; gap:10px;">
-        <a href="./home.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Início</a>
-        <a href="./about.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Sobre</a>
-        <a href="./menu.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">O Menu</a>
-        <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Projetos</a>
-        <a href="./build-your-own.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Monta o teu gelado</a>
+        <a href="./home.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Início</a>
+        <a href="./about.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Sobre</a>
+        <a href="./menu.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">O Menu</a>
+        <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Projetos</a>
+        <a href="./build-your-own.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center; transition:color .3s ease, transform .3s ease;" style-hover="color:#ACC048; transform:translateX(4px);">Monta o teu gelado</a>
       </nav>
     </div>
     <div style="padding-top:28px; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; align-items:center;">
