@@ -135,6 +135,19 @@ export const PROJECTS = [
       roadmap: { curto: ['Lançamento da presença digital', 'Fotografia de produto'], medio: ['Comunidade ativa nas redes sociais'], longo: ['Expansão dos materiais de loja'] },
     },
   },
+  {
+    name: 'Noocity', brand: 'Noocity', year: '2023', category: 'estrategia', categoryLabel: 'Estratégia de Marca',
+    photo: './images/ChatGPT%20Image%2028_09_2026%2C%2011_59_01.png',
+    tags: ['Internacionalização', 'Agricultura Urbana', 'Sustentabilidade'],
+    desc: 'Plano estratégico de internacionalização da Noocity, marca de hortas urbanas, para dois novos mercados europeus.',
+    highlight: 'Seleção e estratégia de entrada para dois mercados — Grécia e Alemanha — com aconselhamento à medida de cada um.',
+    process: [
+      { title: 'Diagnóstico', text: 'Análise ao mercado europeu da agricultura urbana — consumo e produção de vegetais per capita, taxas de obesidade, urbanização, emissões de CO2 e níveis de felicidade laboral — para mapear onde a Noocity teria mais impacto.' },
+      { title: 'Posicionamento', text: 'Seleção estratégica da Grécia e da Alemanha como mercados de expansão: a Grécia pela procura crescente por alimentos de qualidade e o peso do turismo gastronómico; a Alemanha pelo baixo consumo de vegetais e o índice de felicidade laboral mais reduzido da Europa.' },
+      { title: 'Plano Estratégico', text: 'Análise PESTEL e SWOT Dinâmica para cada mercado, com estudo da concorrência local, perfil do consumidor e Marketing Mix adaptado à realidade grega e alemã.' },
+      { title: 'Roadmap', text: 'Definição de objetivos e estratégia de entrada específica: foco em hotéis e restaurantes na Grécia, e em empresas e bem-estar laboral na Alemanha.' },
+    ],
+  },
   { name: 'Floralma', brand: 'Floralma', year: '2026', category: 'digital', categoryLabel: 'Presença Digital', tags: ['Presença Digital', 'Redes Sociais'], desc: 'Estratégia de presença digital para a Floralma — a construir.' },
   { name: 'Produflores', brand: 'Produflores', year: '2026', category: 'digital', categoryLabel: 'Presença Digital', tags: ['Presença Digital', 'Redes Sociais'], desc: 'Estratégia de presença digital para a Produflores — a construir.' },
   {
@@ -171,18 +184,6 @@ export const PROJECTS = [
       { title: 'Posicionamento', text: 'Decisão pelo caminho B2C e definição da estratégia de mobilidade sustentável — um posicionamento assente num "mundo mais verde, com zero emissões" — dirigido a homens empresários dos 35 aos 50 anos, urbanos, aventureiros e ligados à sustentabilidade.' },
       { title: 'Plano Estratégico', text: 'Plano de ação omnicanal: eventos, showrooms e test-drives, redes sociais e email marketing, outdoors e mupis em locais estratégicos, lojas físicas e sessões de sensibilização em escolas secundárias para captar público mais jovem.' },
       { title: 'Roadmap', text: 'Objetivos definidos para um horizonte de quatro anos, começando por dar a conhecer os benefícios da e-bike ao público-alvo e expandir progressivamente para novos segmentos e mercados.' },
-    ],
-  },
-  {
-    name: 'Noocity', brand: 'Noocity', year: '2023', category: 'estrategia', categoryLabel: 'Estratégia de Marca',
-    tags: ['Internacionalização', 'Agricultura Urbana', 'Sustentabilidade'],
-    desc: 'Plano estratégico de internacionalização da Noocity, marca de hortas urbanas, para dois novos mercados europeus.',
-    highlight: 'Seleção e estratégia de entrada para dois mercados — Grécia e Alemanha — com aconselhamento à medida de cada um.',
-    process: [
-      { title: 'Diagnóstico', text: 'Análise ao mercado europeu da agricultura urbana — consumo e produção de vegetais per capita, taxas de obesidade, urbanização, emissões de CO2 e níveis de felicidade laboral — para mapear onde a Noocity teria mais impacto.' },
-      { title: 'Posicionamento', text: 'Seleção estratégica da Grécia e da Alemanha como mercados de expansão: a Grécia pela procura crescente por alimentos de qualidade e o peso do turismo gastronómico; a Alemanha pelo baixo consumo de vegetais e o índice de felicidade laboral mais reduzido da Europa.' },
-      { title: 'Plano Estratégico', text: 'Análise PESTEL e SWOT Dinâmica para cada mercado, com estudo da concorrência local, perfil do consumidor e Marketing Mix adaptado à realidade grega e alemã.' },
-      { title: 'Roadmap', text: 'Definição de objetivos e estratégia de entrada específica: foco em hotéis e restaurantes na Grécia, e em empresas e bem-estar laboral na Alemanha.' },
     ],
   },
   {
@@ -249,8 +250,8 @@ export const PROJECTS = [
 export function buildSummary(p) {
   const out = { lead: p.desc || '', bullets: [], chips: p.tags || [], dots: [], shots: [], meta: '' };
   if (p.highlight) out.bullets = [p.highlight];
-  if (p.keyFindings) out.bullets = p.keyFindings.slice(0, 2);
-  if (p.process) out.chips = p.process.map(s => s.title);
+  if (p.keyFindings) out.bullets = out.bullets.concat(p.keyFindings);
+  if (p.process) out.bullets = out.bullets.concat(p.process.map(s => s.title + ' — ' + s.text));
   if (p.publication) out.meta = p.publication;
   const id = p.identity;
   if (id) {
