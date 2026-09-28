@@ -100,7 +100,6 @@
   <section style="padding:clamp(64px,8vw,120px) 5%; border-bottom:1px solid rgba(57,29,1,0.28);">
     <div style="display:flex; gap:clamp(28px,5vw,72px); flex-wrap:wrap; align-items:flex-start;">
       <div data-reveal style="flex:1 1 min(100%,420px); min-width:0;">
-        <p style="font-family:'Indie Flower',cursive; font-size:15px; letter-spacing:0.01em; color:#690A20; margin:0 0 20px;">01 · Welcome</p>
         <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(30.4px,4.81vw,77.1px); line-height:0.88; letter-spacing:-0.03em; margin:0;">Welcome to<br /><span style="font-style:italic; color:#690A20; white-space:nowrap;">Nau Quero</span></h2>
       </div>
       <div data-reveal data-reveal-delay="120" style="flex:1 1 min(100%,420px); min-width:0; display:flex; flex-direction:column; gap:24px;">
@@ -156,15 +155,15 @@
     </div>
   </section>
 
-  <section style="padding:clamp(64px,8vw,120px) 5%; border-bottom:1px solid rgba(57,29,1,0.28);">
-    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:clamp(30px,4vw,48px);">
+  <section style="padding:clamp(44px,5.5vw,76px) 5%;">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:clamp(24px,3vw,36px);">
       <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(27.3px,4.41vw,73.9px); line-height:0.88; letter-spacing:-0.03em; margin:0; max-width:22ch;">A few of my favourite <span style="font-style:italic; color:#690A20;">flavours.</span></h2>
       <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#391D01; text-decoration:none; border-bottom:1px solid #690A20; padding-bottom:4px; display:inline-flex; align-items:flex-end;">Ver todos os projetos →</a>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:clamp(12px,1.4vw,18px); align-items:start;">
-      <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="4">
-        <a data-reveal href="./work.html" style="display:flex; flex-direction:column; gap:10px; text-decoration:none; color:#391D01; transition:transform .3s ease;" style-hover="transform:translateY(-3px);">
-          <div style="position:relative; aspect-ratio:1/1; border:1px solid rgba(57,29,1,0.22); border-radius:10px; overflow:hidden; background:{{ pr.bg }}; box-shadow:{{ pr.glow }}; transition:box-shadow .35s ease;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:clamp(14px,1.6vw,20px); align-items:start;">
+      <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="3">
+        <a data-reveal href="./work.html" style="display:flex; flex-direction:column; gap:10px; text-decoration:none; color:#391D01; transition:transform .3s ease;" style-hover="transform:translateY(-5px) scale(1.02);">
+          <div style="position:relative; aspect-ratio:16/10; border:1px solid rgba(57,29,1,0.22); border-radius:12px; overflow:hidden; background:{{ pr.bg }}; box-shadow:{{ pr.glow }}; transition:box-shadow .35s ease;">
             <image-slot id="{{ pr.slot }}" shape="rect" placeholder="{{ pr.ph }}" style="position:absolute; inset:0;"></image-slot>
           </div>
           <div style="display:flex; flex-direction:column; gap:3px;">
@@ -207,9 +206,6 @@
         <a href="./work.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Projetos</a>
         <a href="./build-your-own.html" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Monta o teu gelado</a>
       </nav>
-      <nav style="display:flex; flex-direction:column; gap:10px;">
-        <a href="./menu.html#faq" style="font-family:'League Spartan',sans-serif; font-size:12.5px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; display:inline-flex; align-items:center;" style-hover="color:#F3E9D2;">Perguntas frequentes</a>
-      </nav>
     </div>
     <div style="padding-top:28px; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; align-items:center;">
       <p style="font-family:'The Seasons','Petrona',Georgia,serif; font-style:italic; font-size:clamp(15.6px,1.87vw,23.4px); margin:0; color:#F3E9D2;">It<span style="font-family:'Petrona',Georgia,serif;">’</span>s okay to like extraordinary.</p>
@@ -232,14 +228,12 @@ const SERVICES = [
 ];
 
 const PROJECTS = [
-  { num: '01', name: 'Raízes Frescas', sector: 'Mercearia local', slot: 'home-proj-01', ph: 'imagem do projeto', bg: '#391D01', accent: '#ACC048', glow: '0 0 46px 12px rgba(172,192,72,0.5)', ratio: '16/10', span: 'span 2',
+  { num: '01', name: 'Raízes Frescas', sector: 'Mercearia local', slot: 'home-proj-01', ph: 'imagem do projeto', bg: '#391D01', accent: '#ACC048', glow: '0 0 46px 12px rgba(172,192,72,0.5)',
     teaser: 'Estratégia, identidade, direção criativa e aplicações para uma mercearia de bairro.' },
-  { num: '02', name: 'Casa Gelo', sector: 'Gelataria', slot: 'home-proj-02', ph: 'imagem do projeto', bg: '#391D01', accent: '#ACC048', glow: '0 0 46px 12px rgba(172,192,72,0.5)', ratio: '4/5', span: 'auto',
+  { num: '02', name: 'Casa Gelo', sector: 'Gelataria', slot: 'home-proj-02', ph: 'imagem do projeto', bg: '#391D01', accent: '#D2E8FF', glow: '0 0 46px 12px rgba(210,232,255,0.5)',
     teaser: 'Uma gelataria com nome próprio e uma linguagem visual que sabe a verão inteiro.' },
-  { num: '03', name: 'Vinte Valores', sector: 'Educação', slot: 'home-proj-03', ph: 'imagem do projeto', bg: '#391D01', accent: '#D2E8FF', glow: '0 0 46px 12px rgba(210,232,255,0.5)', ratio: '4/5', span: 'auto',
+  { num: '03', name: 'Vinte Valores', sector: 'Educação', slot: 'home-proj-03', ph: 'imagem do projeto', bg: '#391D01', accent: '#F5C232', glow: '0 0 46px 12px rgba(245,194,50,0.5)',
     teaser: 'Posicionamento e identidade para um projeto educativo que fala com pais e alunos.' },
-  { num: '04', name: 'Atlântica Rooms', sector: 'Hotelaria', slot: 'home-proj-04', ph: 'imagem do projeto', bg: '#391D01', accent: '#F5C232', glow: '0 0 46px 12px rgba(245,194,50,0.5)', ratio: '16/10', span: 'span 2',
-    teaser: 'Marca de alojamento no litoral norte: tom de voz, identidade e presença digital.' },
 ];
 
 class Component extends DCLogic {
@@ -254,7 +248,7 @@ class Component extends DCLogic {
   featured() {
     const d = this._d;
     if (!d) return PROJECTS;
-    return d.PROJECTS.slice(0, 4).map((p, i) => ({
+    return d.PROJECTS.slice(0, 3).map((p, i) => ({
       num: String(i + 1).padStart(2, '0'),
       name: p.name,
       sector: p.categoryLabel,
