@@ -176,19 +176,19 @@
     </div>
   </section>
 
-  <section style="padding:clamp(44px,5.5vw,76px) 5%; background:#690A20; color:#F3E9D2;">
+  <section style="padding:clamp(44px,5.5vw,76px) 5%;">
     <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:clamp(24px,3vw,36px);">
-      <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(23.2px,3.75vw,62.8px); line-height:0.88; letter-spacing:-0.03em; margin:0; max-width:22ch; color:#F3E9D2;">A few of my favourite <span style="font-style:italic; color:#ACC048;">flavours.</span></h2>
-      <a href="./work.html" style="font-family:'Poppins',sans-serif; font-size:10.6px; letter-spacing:0.015em; color:#F3E9D2; text-decoration:none; border-bottom:1px solid #ACC048; padding-bottom:4px; display:inline-flex; align-items:flex-end; transition:color .3s ease;" style-hover="color:#ACC048;">Ver todos os projetos →</a>
+      <h2 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:clamp(23.2px,3.75vw,62.8px); line-height:0.88; letter-spacing:-0.03em; margin:0; max-width:22ch;">A few of my favourite <span style="font-style:italic; color:#690A20;">flavours.</span></h2>
+      <a href="./work.html" style="font-family:'Poppins',sans-serif; font-size:10.6px; letter-spacing:0.015em; color:#391D01; text-decoration:none; border-bottom:1px solid #690A20; padding-bottom:4px; display:inline-flex; align-items:flex-end;">Ver todos os projetos →</a>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:clamp(10px,1.2vw,16px); align-items:start;">
       <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="3">
-        <a data-reveal href="./work.html" style="display:flex; flex-direction:column; gap:8px; text-decoration:none; color:#F3E9D2; background:rgba(243,233,210,0.06); border:1px solid rgba(243,233,210,0.2); border-radius:16px; padding:9px; transition:transform .3s ease, border-color .3s ease, background .3s ease;" style-hover="transform:translateY(-4px); border-color:rgba(172,192,72,0.5); background:rgba(243,233,210,0.12);">
+        <a data-reveal href="./work.html" style="display:flex; flex-direction:column; gap:8px; text-decoration:none; color:#391D01; background:rgba(57,29,1,0.03); border:1px solid rgba(57,29,1,0.14); border-radius:16px; padding:9px; transition:transform .3s ease, border-color .3s ease, background .3s ease;" style-hover="transform:translateY(-4px); border-color:rgba(105,10,32,0.4); background:rgba(57,29,1,0.06);">
           <div style="position:relative; aspect-ratio:1/1; border-radius:10px; overflow:hidden; background:{{ pr.bg }};">
             <image-slot id="{{ pr.slot }}" shape="rect" placeholder="{{ pr.ph }}" src="{{ pr.photoSrc }}" style="position:absolute; inset:0;"></image-slot>
           </div>
           <div style="display:flex; flex-direction:column; gap:2px; padding:0 2px 3px;">
-            <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:12.8px; line-height:1.1; margin:0; color:#F3E9D2;">{{ pr.name }}</h3>
+            <h3 style="font-family:'The Seasons','Petrona',Georgia,serif; font-weight:400; font-size:12.8px; line-height:1.1; margin:0;">{{ pr.name }}</h3>
             <span style="font-family:'Poppins',sans-serif; font-size:10px; letter-spacing:0.015em; color:{{ pr.accent }}; opacity:0.9;">{{ pr.sector }}</span>
           </div>
         </a>
